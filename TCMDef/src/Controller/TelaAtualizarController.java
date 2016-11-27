@@ -69,20 +69,26 @@ public class TelaAtualizarController implements Initializable {
         inicializar();
     }
     
-    public void cadastrar(){
-        try{
-            Medias m = new Medias();
-            m.setRegistro1(Integer.parseInt(num1.getText()));
-            m.setRegistro2(Integer.parseInt(num2.getText()));
-            m.setGasto(m.getGasto());
-            m.setAgua(m.getAgua());
-            
-            MediasDao dao = new MediasDao();
-            
-            
-        }catch(Exception ee){
-            ee.printStackTrace();
-        }
+    public void limpar() {
+        textf1.clear();
+        textf2.clear();
+        datap1.setValue(null);
+    }
+    
+    @FXML
+    void salvar() {
+        Medias med = new Medias();
+        med.setRegistro1(Integer.valueOf(textf1.getText()));
+        med.setRegistro2(Integer.valueOf(textf2.getText()));
+        
+        med.setData(datap1.getValue());
+        med.consumo_de_agua();
+        med.getAgua();
+        
+        MediasDAO dao = new MediasDAO();
+        dao.insereMedia(med);
+        
+        limpar();
     }
     
     public void cancel(){
