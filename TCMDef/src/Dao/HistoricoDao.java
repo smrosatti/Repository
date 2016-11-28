@@ -28,16 +28,15 @@ public class HistoricoDao {
     }
 
     public void InsereHistorico(Historico h) {
-        String sql = "INSERT INTO historico (datareg, id_user, dadosiniciais, dadosfinais, media, medialitros, id_media) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO historico (datareg, id_user, dadosiniciais, dadosfinais, media, medialitros) VALUES (?,?,?,?,?,?)";
         try {
             PreparedStatement stm = conexao.prepareStatement(sql);
-            stm.setDate(1, Date.valueOf(h.getDatareg()));
+            stm.setDate(1, Date.valueOf(h.getData()));
             stm.setInt(2, h.getId_usuario());
-            stm.setInt(3, h.getDadosiniciais());
-            stm.setInt(4, h.getDadosfinais());
-            stm.setDouble(5, h.getMedia());
-            stm.setDouble(6, h.getMedialitros());
-            stm.setInt(7, h.getId_media());
+            stm.setInt(3, h.getRegistro1());
+            stm.setInt(4, h.getRegistro2());
+            stm.setDouble(5, h.getGasto());
+            stm.setDouble(6, h.getAgua());
 
             stm.execute();
             stm.close();
@@ -72,13 +71,12 @@ public class HistoricoDao {
                 Historico hist = new Historico();
                 hist.setId_historico(rs.getInt("id_historico"));
                 hist.setId_usuario(rs.getInt("id_user"));
-                hist.setDadosiniciais(rs.getInt("dadosiniciais"));
-                hist.setDadosfinais(rs.getInt("dadosfinais"));
-                hist.setMedia(rs.getDouble("media"));
-                hist.setMedialitros(rs.getDouble("medialitros"));
-                hist.setId_media(rs.getInt("id_media"));
+                hist.setRegistro1(rs.getInt("dadosiniciais"));
+                hist.setRegistro2(rs.getInt("dadosfinais"));
+                hist.setGasto(rs.getDouble("media"));
+                hist.setAgua(rs.getDouble("medialitros"));
                 Date data = rs.getDate("datareg");
-                hist.setDatareg(data.toLocalDate());
+                hist.setData(data.toLocalDate());
 
                 historicos.add(hist);
             }
