@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaDicasController">
+   <children>
+      <ImageView fitHeight="532.0" fitWidth="653.0" layoutX="-2.0" layoutY="-6.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagem/TemaFundo.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="bt1" layoutX="54.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: White;" text="Voltar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextArea layoutX="54.0" layoutY="54.0" prefHeight="422.0" prefWidth="550.0" style="-fx-border-color: Black;" text="1 - No Banho: Se molhe, feche o chuveiro, se ensaboe e depois abra para enxaguar. Não fique com o chuveiro&#10;aberto. O consumo cairá de 180 para 48 litros. &#10; &#10;2 - Ao escovar os dentes: escove os dentes e enxágüe a boca com a água do copo. Economize 3 litros de água. &#10; &#10;3 - Na descarga: Verifique se a válvula não está com defeito, aperte-a uma única vez e não jogue lixo e restos &#10;de comida no vaso sanitário. &#10; &#10;4 - Na torneira: Uma torneira aberta gasta de 12 a 20 litros/minuto. Pingando, 46 litros/dia. Isto significa, 1.380 &#10;litros por mês. Feche bem as torneiras. &#10; &#10;5 - Vazamentos: Um buraco de 2 milímetros no encanamento desperdiça cerca de 3 caixas d’água de mil litros. &#10; &#10;6 - Na caixa d’água: Não a deixe transbordar e mantenha-a tampada. &#10; &#10;7 - Na lavagem de louças: Lavar louças com a torneira aberta, o tempo todo, desperdiça até 105 litros. Ensaboe &#10;a louça com a torneira fechada e depois enxágüe tudo de uma vez. Na máquina de lavar são gastos 40 litros. &#10;Utilize-a somente quando estiver cheia. &#10; &#10;8 - Regar jardins e plantas: No inverno, a rega pode ser feita dia sim, dia não, pela manhã ou à noite. Use man-&#10;gueira com esguicho-revólver ou regador. &#10; &#10;9 - Lavar carro: com uma mangueira gasta 600 litros de água. Só lave o carro uma vez por mês, com balde de &#10;10 litros, para ensaboar e enxaguar. Para isso, use a água da sobra da máquina de lavar louça. &#10; &#10;10 - Na limpeza de quintal e calçadas use vassoura: Se precisar utilize a água que sai do enxágüe da máquina &#10;de lavar. ">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </TextArea>
+      <Text layoutX="54.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dicas">
+         <font>
+            <Font name="Times New Roman Bold" size="30.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

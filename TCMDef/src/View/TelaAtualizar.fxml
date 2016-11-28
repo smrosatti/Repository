@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaAtualizarController">
+   <children>
+      <ImageView fitHeight="532.0" fitWidth="653.0" layoutY="-3.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagem/TemaFundo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="249.0" layoutY="127.0" text="Data">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dataleitura" layoutX="297.0" layoutY="124.0" prefHeight="27.0" prefWidth="283.0" style="-fx-background-color: White; -fx-border-color: black;" />
+      <TextField fx:id="num1" layoutX="297.0" layoutY="236.0" prefHeight="27.0" prefWidth="283.0" promptText="Informe os números iniciais da leitura..." style="-fx-background-color: White; -fx-border-color: Black;" />
+      <TextField fx:id="num2" layoutX="297.0" layoutY="308.0" prefHeight="27.0" prefWidth="283.0" promptText="Informe os números finais da leitura..." style="-fx-background-color: White; -fx-border-color: Black;" />
+      <Button fx:id="btsalvar" layoutX="515.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: White; -fx-border-color: ;" text="Salvar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btcancel" layoutX="294.0" layoutY="376.0" mnemonicParsing="false" style="-fx-background-color: White; -fx-border-color: ;" text="Cancelar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="nomeuser" layoutX="68.0" layoutY="179.0" text="Nome Usuário" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btvoltar" layoutX="68.0" layoutY="458.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: White;" text="Voltar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="44.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

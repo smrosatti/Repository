@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaInicialController">
+   <children>
+      <ImageView fitHeight="532.0" fitWidth="653.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagem/TelaInicial.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="login" layoutX="400.0" layoutY="403.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-color: black;" text="Login">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="cadastro" layoutX="154.0" layoutY="403.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: white;" text="Cadastro">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Text layoutX="180.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-Vindo ao OverSpending!" textAlignment="CENTER" wrappingWidth="273.33984375">
+         <font>
+            <Font name="Arial Black" size="33.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="164.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Controle seus gastos com água, economize dinheiro e faça bem ao meio-ambiente!" textAlignment="CENTER" wrappingWidth="305.55078125">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

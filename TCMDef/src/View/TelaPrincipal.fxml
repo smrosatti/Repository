@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaPrincipalController">
+    <children>
+        <ImageView fitHeight="532.0" fitWidth="653.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+            <Image url="@../Imagem/TemaFundo.jpg" />
+         </image>
+        </ImageView>
+        <MenuBar blendMode="DARKEN" layoutX="10.0" layoutY="1.0" prefHeight="25.0" prefWidth="633.0" style="-fx-background-color: #6495ED; -fx-border-color: #4169E1;">
+            <menus>
+                <Menu mnemonicParsing="true" text="Usuário">
+                    <items>
+                        <MenuItem mnemonicParsing="true" onAction="#Editar_Usuario" text="Editar Perfil..." />
+                        <MenuItem mnemonicParsing="true" onAction="#Cadastrar_Usuario" text="Cadastrar Novo Usuário..." />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="true" text="Gastos">
+                    <items>
+                        <MenuItem mnemonicParsing="true" onAction="#Dicas_Consumo" text="Dicas de Consumo..." />
+                        <MenuItem mnemonicParsing="true" text="Grafico de Gastos..." /> 
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="true" text="Ajuda">
+                    <items>
+                        <MenuItem mnemonicParsing="true" text="Sobre..." />
+                        <MenuItem mnemonicParsing="true" text="Contato..." /> 
+                    </items>
+                </Menu>
+            </menus>
+         <effect>
+            <DropShadow height="56.51" radius="26.14" spread="0.1" width="50.05" />
+         </effect>
+        </MenuBar>
+        <Button fx:id="hist" contentDisplay="CENTER" layoutX="41.0" layoutY="203.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Histórico de Gastos" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="203.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+        <Button fx:id="atualiza" layoutX="41.0" layoutY="269.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Inserir Dados" textFill="WHITE" AnchorPane.topAnchor="269.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+        <Button fx:id="ec" layoutX="41.0" layoutY="335.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Economia" textFill="WHITE" AnchorPane.topAnchor="335.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+        <Label layoutX="481.0" layoutY="221.0" prefHeight="27.0" prefWidth="93.0" text="Bem - Vindo" AnchorPane.leftAnchor="481.0" AnchorPane.topAnchor="221.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <DatePicker fx:id="data_atualizacao" editable="false" layoutX="472.0" layoutY="389.0" prefHeight="25.0" prefWidth="197.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="44.0" />
+        <Button fx:id="sair" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="50.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Sair" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label fx:id="nome" alignment="CENTER" layoutX="406.0" layoutY="258.0" prefHeight="21.0" prefWidth="231.0" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="406.0" AnchorPane.topAnchor="258.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+        <Label layoutX="272.0" layoutY="391.0" text="Última Atualização:">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <ImageView id="foto" fx:id="foto" fitHeight="150.0" fitWidth="150.0" layoutX="452.0" layoutY="61.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagem/user.png" />
+         </image></ImageView>
+      <Label fx:id="sobrenomet" alignment="CENTER" layoutX="406.0" layoutY="291.0" prefHeight="21.0" prefWidth="231.0" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="177.0" AnchorPane.leftAnchor="406.0" AnchorPane.topAnchor="291.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+    </children>  
+</AnchorPane>

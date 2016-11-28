@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controller.TelaListarUsersController">
+    <children>
+      <SplitPane dividerPositions="0.2946793997271487" prefHeight="532.0" prefWidth="735.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="158.0">
+               <children>
+                  <ImageView fitHeight="532.0" fitWidth="213.0" layoutY="-3.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Imagem/FundoHist.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="pesquisatf" layoutX="75.0" layoutY="131.0" prefHeight="25.0" prefWidth="133.0" promptText="Nome do Usuário..." style="-fx-background-color: White;" />
+                  <Button fx:id="pesquisar" layoutX="138.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Pesquisar">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="gerarpdf" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" style="-fx-background-color: White;" text="Gerar PDF">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Text layoutX="53.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuários">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="3.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquisar:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="438.0">
+               <children>
+                  <TableView fx:id="tableusers" layoutX="-4.0" prefHeight="530.0" prefWidth="521.0" styleClass="teble2" stylesheets="@../CSS/Ola.css">
+                    <columns>
+                      <TableColumn fx:id="nomec" prefWidth="129.0" styleClass="table2" text="Nome" />
+                      <TableColumn fx:id="sobrenomec" prefWidth="126.0" styleClass="table2" text="Sobrenome" />
+                        <TableColumn fx:id="emailc" prefWidth="132.0" text="E-mail" />
+                        <TableColumn fx:id="usuarioc" prefWidth="133.0" text="Usuário" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
