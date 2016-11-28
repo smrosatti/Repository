@@ -8,6 +8,7 @@ package Controller;
 import Dao.HistoricoDao;
 import Main.MAtualizar;
 import Model.Historico;
+import Model.Usuario;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -78,6 +79,8 @@ public class TelaHistoricoController implements Initializable {
     private ObservableList<Historico> OBListHistorico;
 
     private Historico selecionado;
+    
+    private Usuario logado;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -140,7 +143,7 @@ public class TelaHistoricoController implements Initializable {
 
     public void adicionar() {
         try {
-            MAtualizar tela = new MAtualizar();
+            MAtualizar tela = new MAtualizar(logado);
             tela.start(new Stage());
         } catch (Exception ee) {
             ee.printStackTrace();

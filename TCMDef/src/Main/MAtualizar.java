@@ -5,15 +5,13 @@
  */
 package Main;
 
+import Controller.TelaAtualizarController;
+import Model.Usuario;
 import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -23,6 +21,10 @@ import javafx.stage.Stage;
 public class MAtualizar extends Application {
     
     private static Stage stage;
+    
+    public MAtualizar(Usuario u){
+        TelaAtualizarController.setLogado(u);
+    }
     
     public static Stage getStage(){
         return MAtualizar.stage;

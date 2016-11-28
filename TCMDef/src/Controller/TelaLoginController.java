@@ -102,6 +102,7 @@ public class TelaLoginController implements Initializable {
             for (int i = 0; i < users.size(); i++) {
                 if (user.getText().equals(users.get(i).getUser())) {
                     if (Criptografia.criptografar(senha.getText()).equals(users.get(i).getSenha())) {
+                       
                         String imagem, nome, sobrenome, email, user;
                         int id_user;
                         nome = users.get(i).getNome();

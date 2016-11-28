@@ -126,7 +126,7 @@ public class TelaPrincipalController implements Initializable {
 
     public void atualizar() {
         try {
-            MAtualizar tela = new MAtualizar();
+            MAtualizar tela = new MAtualizar(log);
             tela.start(new Stage());
         } catch (Exception ee) {
             ee.printStackTrace();

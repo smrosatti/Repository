@@ -7,8 +7,8 @@ package Controller;
 
 import Dao.MediasDao;
 import Main.MAtualizar;
-import Main.MEditUser;
 import Model.Medias;
+import Model.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -17,6 +17,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -24,6 +26,14 @@ import javafx.scene.control.TextField;
  * @author SARA
  */
 public class TelaAtualizarController implements Initializable {
+
+    public static Usuario getLogado() {
+        return logado;
+    }
+
+    public static void setLogado(Usuario aLogado) {
+        logado = aLogado;
+    }
     
     @FXML
     private DatePicker dataleitura;
@@ -49,9 +59,14 @@ public class TelaAtualizarController implements Initializable {
     @FXML
     private Label nomeuser;
     
+    @FXML
+    private ImageView imguser;
+    
+    private static Usuario logado;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        inicializar();
     }
     
     public void cadastrar(){
@@ -73,6 +88,15 @@ public class TelaAtualizarController implements Initializable {
     public void cancel(){
         try{
             MAtualizar.getStage().close();
+        }catch(Exception ee){
+            ee.printStackTrace();
+        }
+    }
+    
+    public void inicializar(){
+        try{
+            imguser.setImage(new Image(logado.getImagem()));
+            nomeuser.setText(logado.getUser());
         }catch(Exception ee){
             ee.printStackTrace();
         }
