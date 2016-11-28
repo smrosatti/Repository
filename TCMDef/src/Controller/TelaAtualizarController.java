@@ -110,22 +110,18 @@ public class TelaAtualizarController implements Initializable {
             
         } else {
 
-            Medias med = new Medias();
-            med.setRegistro1(Integer.valueOf(num1.getText()));
-            med.setRegistro2(Integer.valueOf(num2.getText()));
-
-            med.setData(dataleitura.getValue());
-            med.consumo_de_agua();
-            med.getAgua();
-
-            MediasDao dao = new MediasDao();
-            dao.insereMedia(med);
-
-            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-            a.setHeaderText("Dados Inseridos com Sucesso!");
-            a.show();
-
-            limpar();
+            Historico med = new Historico();
+        med.setRegistro1(Integer.valueOf(textf1.getText()));
+        med.setRegistro2(Integer.valueOf(textf2.getText()));
+        
+        med.setData(datap1.getValue());
+        med.consumo_de_agua();
+        med.getAgua();
+        
+        HistoricoDAO dao = new HistoricoDAO();
+        dao.InsereHistorico(med);
+        
+        limpar();
         }
     }
 
