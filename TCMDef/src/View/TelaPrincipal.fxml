@@ -58,7 +58,7 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Label>
-        <DatePicker fx:id="data_atualizacao" editable="false" layoutX="472.0" layoutY="389.0" prefHeight="25.0" prefWidth="197.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="44.0" />
+        <DatePicker fx:id="datap" editable="false" layoutX="472.0" layoutY="389.0" prefHeight="25.0" prefWidth="197.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="44.0" />
         <Button fx:id="sair" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="50.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Sair" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />

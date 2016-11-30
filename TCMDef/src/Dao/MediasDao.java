@@ -12,6 +12,7 @@ package Dao;/*
 
 import JDBC.ConnectionFactory;
 import Model.Medias;
+import Model.Usuario;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -70,13 +71,13 @@ public class MediasDao {
         }
     }
 
-    public ObservableList<Medias> getLista(Medias m1) {
+    public ObservableList<Medias> getLista(Usuario u) {
         Date ota;
         ObservableList<Medias> meds = FXCollections.observableArrayList();
         try {
             String sql = "SELECT * FROM medias WHERE id_user=?";
             PreparedStatement pst = conexaobd.prepareStatement(sql);
-            pst.setInt(1, m1.getId_user());
+            pst.setInt(1, u.getId_user());
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 Medias m = new Medias();
@@ -92,6 +93,7 @@ public class MediasDao {
                 meds.add(m);
             }
             pst.execute();
+            pst.close();
             conexaobd.close();
         } catch (Exception e) {
             e.printStackTrace();

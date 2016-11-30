@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Dao.UsuarioDao;
+import Dao.MediasDao;
 import Main.MAtualizar;
 import Main.MCadastro;
 import Main.MDicas;
@@ -14,13 +14,11 @@ import Main.MEditUser;
 import Main.MHistorico;
 import Main.MListarUsers;
 import Main.MPrincipal;
+import Model.Medias;
 import Model.Usuario;
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +26,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -69,14 +68,24 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     private Label sobrenomet;
 
+    @FXML
+    private DatePicker datap;
+
     private String caminho;
-    
+
     private static Usuario log;
 
     public void mudancas() {
         try {
             nome.setText(log.getNome());
             sobrenomet.setText(log.getSobrenome());
+            MediasDao dao = new MediasDao();
+            ObservableList<Medias> medias = dao.getLista(log);
+            for (int i = 0; i < medias.size(); i++) {
+                if (i+1 == medias.size()) {
+                    datap.setValue(medias.get(i).getData());
+                }
+            }
             try {
                 foto.setImage(new Image(log.getImagem()));
             } catch (Exception e) {

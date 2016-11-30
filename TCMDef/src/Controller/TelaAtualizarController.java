@@ -5,10 +5,10 @@
  */
 package Controller;
 
-import Dao.HistoricoDao;
+import Dao.MediasDao;
 import Main.MAtualizar;
 import Main.MEditUser;
-import Model.Historico;
+import Model.Medias;
 import Model.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -50,9 +50,12 @@ public class TelaAtualizarController implements Initializable {
 
     @FXML
     private TextField num1;
-
-    @FXML
-    private Button btcancel;
+    
+     @FXML
+    private TextField litrosf;
+     
+      @FXML
+    private TextField reaisf;
 
     @FXML
     private TextField num2;
@@ -62,6 +65,9 @@ public class TelaAtualizarController implements Initializable {
 
     @FXML
     private ImageView imguser;
+    
+    @FXML
+    private Button btlimpar;
 
     private static Usuario logado;
 
@@ -73,12 +79,12 @@ public class TelaAtualizarController implements Initializable {
             salvar();
         });
 
-        btcancel.setOnMouseClicked((MouseEvent evt) -> {
-            cancel();
-        });
-
         btvoltar.setOnMouseClicked((MouseEvent evt) -> {
             cancel();
+        });
+        
+        btlimpar.setOnMouseClicked((MouseEvent evt)->{
+            limpar();
         });
     }
 
@@ -86,6 +92,8 @@ public class TelaAtualizarController implements Initializable {
         num1.clear();
         num2.clear();
         dataleitura.setValue(null);
+        litrosf.clear();
+        reaisf.clear();
     }
 
     public void btperfil() {
@@ -99,30 +107,37 @@ public class TelaAtualizarController implements Initializable {
         }
     }
 
-    @FXML
-    void salvar() {
+    public void salvar() {
+        try {
 
-        if (num1.equals(" ") | num2.equals(" ") | dataleitura.equals(" ")) {
+            if (num1.getText().trim().isEmpty() | num2.getText().trim().isEmpty() | dataleitura.toString().trim().isEmpty()) {
 
-            Alert a = new Alert(Alert.AlertType.WARNING);
-            a.setHeaderText("Por favor preencha todos os campos!");
-            a.show();
+                Alert a = new Alert(Alert.AlertType.WARNING);
+                a.setHeaderText("Por favor preencha todos os campos!");
+                a.show();
 
-        } else {
+            } else {
 
-            Historico med = new Historico();
-            med.setRegistro1(Integer.valueOf(num1.getText()));
-            med.setRegistro2(Integer.valueOf(num2.getText()));
+                Medias m = new Medias();
+                m.setRegistro1(Integer.valueOf(num1.getText()));
+                m.setRegistro2(Integer.valueOf(num2.getText()));
+                m.setData(dataleitura.getValue());
+                m.setId_user(logado.getId_user());
+                m.consumo_de_agua();
 
-            med.setId_usuario(logado.getId_user());
-            med.setData(dataleitura.getValue());
-            med.consumo_de_agua();
-            med.getAgua();
+                MediasDao dao = new MediasDao();
+                dao.insereMedia(m);
+                
+                                
+                reaisf.setText(Double.toString(m.getGasto()));
+                litrosf.setText(Double.toString(m.getAgua()));
 
-            HistoricoDao dao = new HistoricoDao();
-            dao.InsereHistorico(med);
-
-            limpar();
+                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+                a.setHeaderText("Média Cadastrada com Sucesso!");
+                a.show();
+            }
+        } catch (Exception ee) {
+            ee.printStackTrace();
         }
     }
 
