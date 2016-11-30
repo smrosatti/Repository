@@ -36,7 +36,7 @@ public class HistoricoDao {
             stm.setInt(3, h.getRegistro1());
             stm.setInt(4, h.getRegistro2());
             stm.setDouble(5, h.getGasto());
-            stm.setDouble(6, h.getAgua());
+            stm.setDouble(6, h.getRegisFinal());
 
             stm.execute();
             stm.close();
@@ -74,7 +74,7 @@ public class HistoricoDao {
                 hist.setRegistro1(rs.getInt("dadosiniciais"));
                 hist.setRegistro2(rs.getInt("dadosfinais"));
                 hist.setGasto(rs.getDouble("media"));
-                hist.setAgua(rs.getDouble("medialitros"));
+                hist.setRegisFinal(rs.getInt("medialitros"));
                 Date data = rs.getDate("datareg");
                 hist.setData(data.toLocalDate());
 
