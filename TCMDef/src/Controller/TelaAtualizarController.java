@@ -124,6 +124,7 @@ public class TelaAtualizarController implements Initializable {
                 m.setData(dataleitura.getValue());
                 m.setId_user(logado.getId_user());
                 m.consumo_de_agua();
+                m.getRegisFinal();
 
                 MediasDao dao = new MediasDao();
                 dao.insereMedia(m);
