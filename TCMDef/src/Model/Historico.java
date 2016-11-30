@@ -31,27 +31,27 @@ public class Historico {
 
     public void consumo_de_agua() {
         metrocubico = (1000);
+        
+        registro1 = registro1 * metrocubico;
+        registro2 = registro2 * metrocubico;
 
-        agua = (registro2 - registro1);
-        agua = (gasto * metrocubico);
+        regisFinal = registro1 + registro2;
 
-        if (agua <= 10000) {
+        if (registro1 <= 10000 && regisFinal <= 10000) {
             gasto = (33.74);
         } else {
-            while (metrocubico * 10 < agua) {
+            while (cont < (registro2 / metrocubico)) {
                 if (cont == 0) {
                     gasto = (33.74);
                 }
-                gasto = (gasto + 6.84);
-                metrocubico = (metrocubico + 1000);
-                cont = (cont + 1);
+                gasto = (gasto + 5.06);
+                cont++;
             }
-            System.out.println(agua);
-            setGasto(gasto);
-            setAgua(agua);
         }
+        System.out.println(regisFinal + " " + gasto);
+        setGasto(gasto);
+        setRegisFinal(regisFinal);
     }
-
     public int getId_historico() {
         return id_historico;
     }
