@@ -16,31 +16,58 @@
             <Image url="@../Imagem/TemaFundo.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="249.0" layoutY="127.0" text="Data">
+      <Label layoutX="294.0" layoutY="127.0" text="Data da Leitura:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <DatePicker fx:id="dataleitura" layoutX="297.0" layoutY="124.0" prefHeight="27.0" prefWidth="283.0" style="-fx-background-color: White; -fx-border-color: black;" />
-      <TextField fx:id="num1" layoutX="297.0" layoutY="236.0" prefHeight="27.0" prefWidth="283.0" promptText="Informe os números iniciais da leitura..." style="-fx-background-color: White; -fx-border-color: Black;" />
-      <TextField fx:id="num2" layoutX="297.0" layoutY="308.0" prefHeight="27.0" prefWidth="283.0" promptText="Informe os números finais da leitura..." style="-fx-background-color: White; -fx-border-color: Black;" />
-      <Button fx:id="btsalvar" layoutX="515.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: White; -fx-border-color: ;" text="Salvar">
+      <DatePicker fx:id="dataleitura" layoutX="430.0" layoutY="124.0" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: White; -fx-border-color: black;" />
+      <TextField fx:id="num1" layoutX="297.0" layoutY="216.0" prefHeight="27.0" prefWidth="283.0" promptText="Informe os números iniciais da leitura..." style="-fx-background-color: White; -fx-border-color: Black;" />
+      <TextField fx:id="num2" layoutX="297.0" layoutY="274.0" prefHeight="27.0" prefWidth="283.0" promptText="Informe os números finais da leitura..." style="-fx-background-color: White; -fx-border-color: Black;" />
+      <Button fx:id="btsalvar" layoutX="505.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: White; -fx-border-color: ;" text="Salvar">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="btcancel" layoutX="294.0" layoutY="376.0" mnemonicParsing="false" style="-fx-background-color: White; -fx-border-color: ;" text="Cancelar">
+      <Button fx:id="btcancel" layoutX="297.0" layoutY="343.0" mnemonicParsing="false" style="-fx-background-color: White; -fx-border-color: ;" text="Cancelar">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Label fx:id="nomeuser" alignment="CENTER" layoutX="17.0" layoutY="226.0" prefHeight="21.0" prefWidth="200.0" text="Nome Usuário" textAlignment="CENTER">
+      <Label fx:id="nomeuser" alignment="CENTER" layoutX="14.0" layoutY="170.0" prefHeight="21.0" prefWidth="150.0" text="Nome Usuário" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btvoltar" layoutX="43.0" layoutY="441.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: White;" text="Voltar">
+      <Button fx:id="btvoltar" layoutX="36.0" layoutY="450.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="65.0" style="-fx-background-color: White;" text="Voltar">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <ImageView fx:id="imguser" fitHeight="200.0" fitWidth="200.0" layoutX="17.0" layoutY="20.0" pickOnBounds="true" />
+      <ImageView fx:id="imguser" fitHeight="150.0" fitWidth="150.0" layoutX="17.0" layoutY="20.0" pickOnBounds="true" />
+      <Label layoutX="150.0" layoutY="219.0" text="Números iniciais:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="277.0" text="Números finais:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="395.0" text="Consumo em Litros:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="378.0" layoutY="395.0" text="Consumo em Reais:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="litrosf" disable="true" editable="false" layoutX="181.0" layoutY="392.0" prefHeight="25.0" prefWidth="65.0" />
+      <TextField fx:id="reaisf" disable="true" editable="false" layoutX="505.0" layoutY="392.0" prefHeight="25.0" prefWidth="65.0" />
+      <Label layoutX="199.0" layoutY="20.0" text="Inserir Dados da Leitura">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

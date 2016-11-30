@@ -41,11 +41,11 @@
             <DropShadow height="56.51" radius="26.14" spread="0.1" width="50.05" />
          </effect>
         </MenuBar>
-        <Button fx:id="hist" contentDisplay="CENTER" layoutX="41.0" layoutY="203.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Histórico de Gastos" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="203.0">
+        <Button fx:id="hist" contentDisplay="CENTER" layoutX="41.0" layoutY="286.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Histórico de Gastos" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="286.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-        <Button fx:id="atualiza" layoutX="41.0" layoutY="269.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Inserir Dados" textFill="WHITE" AnchorPane.topAnchor="269.0">
+        <Button fx:id="atualiza" layoutX="41.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #317DFF; -fx-border-color: black;" text="Inserir Dados" textFill="WHITE" AnchorPane.topAnchor="232.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>

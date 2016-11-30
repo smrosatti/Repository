@@ -25,6 +25,15 @@ public class Medias {
     private int cont = 0;
     private LocalDate data;
     private int id;
+    private int id_user;
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
 
     public void consumo_de_agua() {
         metrocubico = (1000);

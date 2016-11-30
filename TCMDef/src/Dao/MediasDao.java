@@ -9,6 +9,7 @@ package Dao;/*
  * and open the template in the editor.
  */
 
+
 import JDBC.ConnectionFactory;
 import Model.Medias;
 import java.sql.Connection;
@@ -31,27 +32,16 @@ public class MediasDao {
     }
 
     public void insereMedia(Medias m) {
-        String sql = "INSERT INTO medias(datamed, valor) values (?, ?)";
+        String sql = "INSERT INTO medias(numerosiniciais, numerosfinais, mediaagua, mediagastos, datam, id_user) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = conexaobd.prepareStatement(sql);
 
-            pst.setDate(1, Date.valueOf(m.getData()));
-            pst.setDouble(2, m.getAgua());
-            pst.execute();
-            conexaobd.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void update(Medias m) {
-        String sql = "UPDATE medias SET datamed = ?, valor = ?";
-        try {
-            PreparedStatement pst = conexaobd.prepareStatement(sql);
-
-            pst.setDate(1, Date.valueOf(m.getData()));
-            pst.setDouble(2, m.getAgua());
-
+            pst.setInt(1, m.getRegistro1());
+            pst.setInt(2, m.getRegistro2());
+            pst.setDouble(3, m.getAgua());
+            pst.setDouble(4, m.getGasto());
+            pst.setDate(5, Date.valueOf(m.getData()));
+            pst.setInt(6, m.getId_user());
             pst.execute();
             pst.close();
             conexaobd.close();
@@ -60,21 +50,44 @@ public class MediasDao {
         }
     }
 
-    public ObservableList<Medias> getLista() {
+    public void update(Medias m) {
+        String sql = "UPDATE medias SET numerosiniciais=?, numerosfinais=?, mediaagua=?, mediagastos=?, datam=? WHERE id_media=? AND id_user=?";
+        try {
+            PreparedStatement pst = conexaobd.prepareStatement(sql);
+
+            pst.setInt(1, m.getRegistro1());
+            pst.setInt(2, m.getRegistro2());
+            pst.setDouble(3, m.getAgua());
+            pst.setDouble(4, m.getGasto());
+            pst.setDate(5, Date.valueOf(m.getData()));
+            pst.setInt(6, m.getId());
+            pst.setInt(7, m.getId_user());
+            pst.execute();
+            pst.close();
+            conexaobd.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ObservableList<Medias> getLista(Medias m1) {
         Date ota;
         ObservableList<Medias> meds = FXCollections.observableArrayList();
         try {
-            String sql = "SELECT * FROM medias";
+            String sql = "SELECT * FROM medias WHERE id_user=?";
             PreparedStatement pst = conexaobd.prepareStatement(sql);
+            pst.setInt(1, m1.getId_user());
             ResultSet rs = pst.executeQuery();
-
             while (rs.next()) {
                 Medias m = new Medias();
 
                 m.setId(rs.getInt("id_media"));
-                ota = rs.getDate("datamed");
+                ota = rs.getDate("datam");
                 m.setData(ota.toLocalDate());
-                m.setAgua(rs.getDouble("valor"));
+                m.setAgua(rs.getDouble("mediaagua"));
+                m.setGasto(rs.getDouble("mediagastos"));
+                m.setRegistro1(rs.getInt("numerosiniciais"));
+                m.setRegistro2(rs.getInt("numerosfinais"));
 
                 meds.add(m);
             }
