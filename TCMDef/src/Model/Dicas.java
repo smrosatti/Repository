@@ -13,6 +13,7 @@ public class Dicas {
     
     private int id_dica;
     private String texto;
+    private int id_user;
 
     public int getId_dica() {
         return id_dica;

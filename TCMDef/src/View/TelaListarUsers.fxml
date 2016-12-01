@@ -8,51 +8,161 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controller.TelaListarUsersController">
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaListarUsersController">
     <children>
-      <SplitPane dividerPositions="0.2946793997271487" prefHeight="532.0" prefWidth="735.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="158.0">
-               <children>
-                  <ImageView fitHeight="532.0" fitWidth="213.0" layoutY="-3.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../Imagem/FundoHist.jpg" />
-                     </image>
-                  </ImageView>
-                  <TextField fx:id="pesquisatf" layoutX="75.0" layoutY="131.0" prefHeight="25.0" prefWidth="133.0" promptText="Nome do Usuário..." style="-fx-background-color: White;" />
-                  <Button fx:id="pesquisar" layoutX="138.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Pesquisar">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font></Button>
-                  <Button fx:id="gerarpdf" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" style="-fx-background-color: White;" text="Gerar PDF">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font></Button>
-                  <Text layoutX="53.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuários">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="3.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquisar:">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="438.0">
-               <children>
-                  <TableView fx:id="tableusers" layoutX="-4.0" prefHeight="530.0" prefWidth="521.0" styleClass="teble2" stylesheets="@../CSS/Ola.css">
-                    <columns>
-                      <TableColumn fx:id="nomec" prefWidth="129.0" styleClass="table2" text="Nome" />
-                      <TableColumn fx:id="sobrenomec" prefWidth="126.0" styleClass="table2" text="Sobrenome" />
-                        <TableColumn fx:id="emailc" prefWidth="132.0" text="E-mail" />
-                        <TableColumn fx:id="usuarioc" prefWidth="133.0" text="Usuário" />
-                    </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+      <TabPane prefHeight="563.0" prefWidth="831.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Usuários">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.26417370325693607" prefHeight="534.0" prefWidth="831.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="158.0">
+                                 <children>
+                                    <ImageView fitHeight="538.0" fitWidth="218.0" layoutY="-3.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../Imagem/FundoHist.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="pesquisatf" layoutX="18.0" layoutY="157.0" prefHeight="25.0" prefWidth="172.0" promptText="Nome do Usuário..." style="-fx-background-color: White;" />
+                                    <Button fx:id="pesquisar" layoutX="18.0" layoutY="218.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: White;" text="Pesquisar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="gerarpdf" layoutX="18.0" layoutY="256.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: White;" text="Gerar PDF">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="53.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuários">
+                                       <font>
+                                          <Font name="System Bold" size="25.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="17.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquisar:">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="pesquisar1" layoutX="18.0" layoutY="297.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: White;" text="Cadastrar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="pesquisar2" layoutX="20.0" layoutY="337.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Deletar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btalteraruser" layoutX="119.0" layoutY="337.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Alterar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btsair" layoutX="18.0" layoutY="478.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Sair">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="496.0">
+                                 <children>
+                                    <TableView fx:id="tableusers" layoutX="-4.0" prefHeight="532.0" prefWidth="518.0" styleClass="teble2" stylesheets="@../CSS/Ola.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                          <TableColumn fx:id="idc" prefWidth="69.0" text="ID" />
+                                        <TableColumn fx:id="sobrenomec" prefWidth="142.0" styleClass="table2" text="Sobrenome" />
+                                          <TableColumn fx:id="emailc" prefWidth="132.0" text="E-mail" />
+                                          <TableColumn fx:id="usuarioc" prefWidth="133.0" text="Usuário" />
+                                        <TableColumn fx:id="nomec" prefWidth="129.0" styleClass="table2" text="Nome" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Administradores">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2605548854041013" layoutX="2.0" layoutY="-2.0" prefHeight="534.0" prefWidth="740.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fitHeight="537.0" fitWidth="218.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../Imagem/FundoHist.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="14.0" layoutY="22.0" text="Administradores">
+                                       <font>
+                                          <Font name="System Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btdeletaradmin" layoutX="30.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Deletar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btcadastraradmin" layoutX="28.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: White;" text="Cadastrar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="27.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquisar:">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="btgerarpdfadmin" layoutX="28.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: White;" text="Gerar PDF">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btpesquisaradmin" layoutX="28.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: White;" text="Pesquisar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="pesquisaradmintf" layoutX="31.0" layoutY="167.0" prefHeight="25.0" prefWidth="163.0" promptText="Nome do Administrador..." style="-fx-background-color: White;" />
+                                    <Button fx:id="btalteraradmin" layoutX="129.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Alterar">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btsair2" layoutX="27.0" layoutY="471.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: White;" text="Sair">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="303.0" prefWidth="375.0">
+                                 <children>
+                                    <TableView fx:id="tableadmin" layoutX="7.0" layoutY="6.0" prefHeight="532.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                          <TableColumn fx:id="idadminc" prefWidth="75.0" text="ID" />
+                                        <TableColumn fx:id="adminc" prefWidth="114.0" text="Usuário" />
+                                        <TableColumn fx:id="nomeadc" prefWidth="113.0" text="Nome" />
+                                          <TableColumn fx:id="sobreadc" prefWidth="138.0" text="Sobrenome" />
+                                          <TableColumn fx:id="cpfadc" prefWidth="169.0" text="CPF" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

@@ -108,7 +108,7 @@ public class TelaPrincipalController implements Initializable {
     public void imagem() {
         try {
             FileChooser janela = new FileChooser();
-            janela.getExtensionFilters().add(new ExtensionFilter("Imagens", "*.jpg"));
+            janela.getExtensionFilters().add(new ExtensionFilter("Imagens", "*.jpg", "*.png", "*.jpeg"));
             File f = janela.showOpenDialog(new Stage());
 
             if (f != null) {

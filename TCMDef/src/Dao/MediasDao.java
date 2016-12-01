@@ -78,6 +78,7 @@ public class MediasDao {
             String sql = "SELECT * FROM medias WHERE id_user=?";
             PreparedStatement pst = conexaobd.prepareStatement(sql);
             pst.setInt(1, u.getId_user());
+            pst.execute();
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 Medias m = new Medias();
@@ -99,5 +100,18 @@ public class MediasDao {
             e.printStackTrace();
         }
         return meds;
+    }
+    
+    public void delete(Medias u){
+        String sql = "DELETE * FROM medias WHERE id_media = ?";
+        try{
+            PreparedStatement stm = conexaobd.prepareStatement(sql);
+            stm.setInt(1, u.getId_media());
+            stm.execute();
+            stm.close();
+            conexaobd.close();
+        }catch(Exception ee){
+            ee.printStackTrace();
+        }
     }
 }

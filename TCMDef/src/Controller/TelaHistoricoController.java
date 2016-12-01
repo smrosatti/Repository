@@ -5,9 +5,9 @@
  */
 package Controller;
 
-import Dao.HistoricoDao;
+import Dao.MediasDao;
 import Main.MAtualizar;
-import Model.Historico;
+import Model.Medias;
 import Model.Usuario;
 import java.net.URL;
 import java.sql.Date;
@@ -35,13 +35,13 @@ import javafx.stage.Stage;
 public class TelaHistoricoController implements Initializable {
 
     @FXML
-    private TableColumn<Historico, Double> medialitroc;
+    private TableColumn<Medias, Double> medialitroc;
 
     @FXML
-    private TableColumn<Historico, Double> mediarealc;
+    private TableColumn<Medias, Double> mediarealc;
 
     @FXML
-    private TableColumn<Historico, LocalDate> dataregc;
+    private TableColumn<Medias, LocalDate> dataregc;
 
     @FXML
     private Button btexcluir;
@@ -53,16 +53,16 @@ public class TelaHistoricoController implements Initializable {
     private Button btatualizar;
 
     @FXML
-    private TableColumn<Historico, Integer> dadossc;
+    private TableColumn<Medias, Integer> dadossc;
 
     @FXML
     private Button pesquisar;
 
     @FXML
-    private TableColumn<Historico, Integer> dadospc;
+    private TableColumn<Medias, Integer> dadospc;
 
     @FXML
-    private TableView<Historico> tablehistorico;
+    private TableView<Medias> tablehistorico;
 
     @FXML
     private Button btsair;
@@ -76,9 +76,9 @@ public class TelaHistoricoController implements Initializable {
     @FXML
     private DatePicker pesquisardata;
 
-    private ObservableList<Historico> OBListHistorico;
+    private ObservableList<Medias> OBListHistorico;
 
-    private Historico selecionado;
+    private Medias selecionado;
     
     private Usuario logado;
 
@@ -103,19 +103,23 @@ public class TelaHistoricoController implements Initializable {
             atualizar();
         });
         
+        btexcluirtudo.setOnMouseClicked((MouseEvent evt)->{
+            excluirtudo();
+        });
+        
         
     }
 
     public void iniciartabela() {
         try {
-            medialitroc.setCellValueFactory(new PropertyValueFactory("agua"));
+            medialitroc.setCellValueFactory(new PropertyValueFactory("regisFinal"));
             mediarealc.setCellValueFactory(new PropertyValueFactory("gasto"));
             dataregc.setCellValueFactory(new PropertyValueFactory("data"));
             dadospc.setCellValueFactory(new PropertyValueFactory("registro1"));
             dadossc.setCellValueFactory(new PropertyValueFactory("registro2"));
 
-            HistoricoDao dao = new HistoricoDao();
-            OBListHistorico = dao.getLista();
+            MediasDao dao = new MediasDao();
+            OBListHistorico = dao.getLista(logado);
             tablehistorico.setItems(OBListHistorico);
 
         } catch (Exception ee) {
@@ -126,8 +130,8 @@ public class TelaHistoricoController implements Initializable {
     public void excluir() {
         try {
             if (selecionado != null) {
-                HistoricoDao dao = new HistoricoDao();
-                dao.deletar(selecionado);
+                MediasDao dao = new MediasDao();
+                dao.delete(selecionado);
                 Alert a = new Alert(AlertType.CONFIRMATION);
                 a.setHeaderText("Registro excluído com sucesso!");
                 a.show();
@@ -152,8 +156,8 @@ public class TelaHistoricoController implements Initializable {
 
     public void pesquisar() {
         try {
-            ObservableList<Historico> hist = FXCollections.observableArrayList();
-            for (Historico h : OBListHistorico) {
+            ObservableList<Medias> hist = FXCollections.observableArrayList();
+            for (Medias h : OBListHistorico) {
                 if (Date.valueOf(h.getData()).equals(Date.valueOf(pesquisardata.getValue()))) {
                     hist.add(h);
                 }
@@ -166,12 +170,12 @@ public class TelaHistoricoController implements Initializable {
 
     public void atualizar() {
         try {
-            HistoricoDao dao = new HistoricoDao();
-            OBListHistorico = dao.getLista();
+            MediasDao dao = new MediasDao();
+            OBListHistorico = dao.getLista(logado);
             tablehistorico.setItems(OBListHistorico);
             Alert a = new Alert(AlertType.CONFIRMATION);
             a.setHeaderText("Tabela Atualizada!");
-            a.show();
+            a.showAndWait();
         } catch (Exception ee) {
             ee.printStackTrace();
         }
@@ -179,11 +183,15 @@ public class TelaHistoricoController implements Initializable {
 
     public void excluirtudo() {
         try {
-            ObservableList<Historico> hist = FXCollections.observableArrayList();
-            for (Historico h : OBListHistorico) {
-                HistoricoDao dao = new HistoricoDao();
-                dao.deletar(h);
+            ObservableList<Medias> hist = FXCollections.observableArrayList();
+            for (Medias h : OBListHistorico) {
+                MediasDao dao = new MediasDao();
+                dao.delete(h);
             }
+           Alert a = new Alert(AlertType.INFORMATION);
+            a.setHeaderText("Todos os dados foram apagados com sucesso!");
+            a.showAndWait(); 
+            atualizar();
 
         } catch (Exception ee) {
             ee.printStackTrace();

@@ -97,5 +97,18 @@ public class UsuarioDao {
             throw new RuntimeException();
         }
     }
+    
+    public void delete(Usuario u){
+        String sql = "DELETE * FROM usuario WHERE id_user = ?";
+        try{
+            PreparedStatement stm = conexaobd.prepareStatement(sql);
+            stm.setInt(1, u.getId_user());
+            stm.execute();
+            stm.close();
+            conexaobd.close();
+        }catch(Exception ee){
+            ee.printStackTrace();
+        }
+    }
 
 }
