@@ -88,10 +88,11 @@ public class TelaEditUserController implements Initializable {
 
     public void Update() {
         try {
-            if (nomealtf.getText().equals(" ") && sobrenomealtf.getText().equals("") && emailaltf.getText().equals(" ") && senhaaltf.getText().equals(" ") && consenhaaltf.getText().equals(" ") && caminho.equals(" ") && useraltf.getText().equals(" ")) {
+            if (nomealtf.getText().trim().isEmpty() || sobrenomealtf.getText().trim().isEmpty() || emailaltf.getText().trim().isEmpty() || senhaaltf.getText().trim().isEmpty() || consenhaaltf.getText().trim().isEmpty() || caminho.trim().isEmpty()|| useraltf.getText().trim().isEmpty()) {
                 Alert erro = new Alert(AlertType.ERROR);
                 erro.setHeaderText("Por Favor Preencha Todos os Campos Corretamente!");
                 erro.showAndWait();
+                
             } else if (senhaaltf.getText().equals(consenhaaltf.getText())) {
 
                 Usuario u = new Usuario();
@@ -101,9 +102,14 @@ public class TelaEditUserController implements Initializable {
                 u.setSenha(Criptografia.criptografar(senhaaltf.getText()));
                 u.setImagem(caminho);
                 u.setUser(useraltf.getText());
+                u.setId_user(user.getId_user());
 
                 UsuarioDao dao = new UsuarioDao();
                 dao.Update(u);
+                
+                Alert erro = new Alert(AlertType.CONFIRMATION);
+                erro.setHeaderText("Alterações feitas com sucesso!");
+                erro.show();
 
                 close();
 
@@ -154,6 +160,7 @@ public class TelaEditUserController implements Initializable {
             useraltf.setText(user.getUser());
             sobrenomealtf.setText(user.getSobrenome());
             emailaltf.setText(user.getEmail());
+            caminho = user.getImagem();
 
         } catch (Exception ee) {
             ee.printStackTrace();

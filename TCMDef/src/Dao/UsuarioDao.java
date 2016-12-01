@@ -49,15 +49,21 @@ public class UsuarioDao {
     }
 
     public void Update(Usuario u) {
-        String sql = "UPDATE usuario SET nome = ? sobrenome = ? email = ?, senha = ?, caminho_imagem = ? WHERE id_user = ?";
+        String sql = "UPDATE usuario SET nome = ? , sobrenome = ? ,email = ?, senha = ?, caminho_imagem = ?, usuario = ? WHERE id_user = ?";
         try {
             PreparedStatement smt = conexaobd.prepareStatement(sql);
             smt.setString(1, u.getNome());
             smt.setString(2, u.getSobrenome());
             smt.setString(3, u.getEmail());
             smt.setString(4, u.getSenha());
+            smt.setString(5, u.getImagem());
+            smt.setString(6, u.getUser());
 
-            smt.setInt(5, u.getId_user());
+            smt.setInt(7, u.getId_user());
+            smt.execute();
+            
+            smt.close();
+            conexaobd.close();
 
         } catch (Exception ee) {
             ee.printStackTrace();

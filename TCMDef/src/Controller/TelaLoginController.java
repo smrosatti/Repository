@@ -41,23 +41,24 @@ public class TelaLoginController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    private Button cad;
+    private Button btcancel;
+
     @FXML
-     Button logar;
+    private Button logar;
 
     @FXML
     private TextField user;
     @FXML
-    private PasswordField senha; 
+    private PasswordField senha;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cad.setOnMouseClicked((MouseEvent evt) -> {
+        btcancel.setOnMouseClicked((MouseEvent evt) -> {
             cad();
         });
 
-        cad.setOnKeyPressed((KeyEvent evt) -> {
+        btcancel.setOnKeyPressed((KeyEvent evt) -> {
             if (evt.getCode() == KeyCode.ENTER) {
                 cad();
             }
@@ -79,7 +80,7 @@ public class TelaLoginController implements Initializable {
             }
         });
     }
-    
+
     public void limpa() {
         user.clear();
         senha.clear();
@@ -87,8 +88,7 @@ public class TelaLoginController implements Initializable {
 
     public void cad() {
         try {
-            MCadastro tela = new MCadastro();
-            tela.start(new Stage());
+            MLogin.getStage().close();
 
         } catch (Exception ee) {
             ee.printStackTrace();
@@ -102,7 +102,7 @@ public class TelaLoginController implements Initializable {
             for (int i = 0; i < users.size(); i++) {
                 if (user.getText().equals(users.get(i).getUser())) {
                     if (Criptografia.criptografar(senha.getText()).equals(users.get(i).getSenha())) {
-                       
+
                         String imagem, nome, sobrenome, email, user;
                         int id_user;
                         nome = users.get(i).getNome();
@@ -112,13 +112,13 @@ public class TelaLoginController implements Initializable {
                         user = users.get(i).getUser();
                         id_user = users.get(i).getId_user();
                         Usuario usuario = new Usuario(nome, imagem, sobrenome, email, user, id_user);
-                        
+
                         MLogin.getStage().close();
                         MPrincipal tela = new MPrincipal(usuario);
                         tela.start(new Stage());
                         i = users.size();
                     }
-                } else if (i+1 == users.size()) {
+                } else if (i + 1 == users.size()) {
                     Alert erro = new Alert(AlertType.ERROR);
                     erro.setHeaderText("Login ou senha inválidos");
                     erro.show();
