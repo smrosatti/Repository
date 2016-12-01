@@ -17,9 +17,9 @@ public class Historico {
 
     }
 
-    private double agua;
     private double gasto;
-    private double metrocubico;
+    private int metrocubico;
+    private double regisFinal;
     private int registro1;
     private int registro2;
     private int cont = 0;
@@ -52,20 +52,21 @@ public class Historico {
         setGasto(gasto);
         setRegisFinal(regisFinal);
     }
+
+    public double getRegisFinal() {
+        return regisFinal;
+    }
+
+    public void setRegisFinal(double regisFinal) {
+        this.regisFinal = regisFinal;
+    }
+    
     public int getId_historico() {
         return id_historico;
     }
 
     public void setId_historico(int id_historico) {
         this.id_historico = id_historico;
-    }
-
-    public double getAgua() {
-        return agua;
-    }
-
-    public void setAgua(double agua) {
-        this.agua = agua;
     }
 
     public double getGasto() {
@@ -80,7 +81,7 @@ public class Historico {
         return metrocubico;
     }
 
-    public void setMetrocubico(double metrocubico) {
+    public void setMetrocubico(int metrocubico) {
         this.metrocubico = metrocubico;
     }
 

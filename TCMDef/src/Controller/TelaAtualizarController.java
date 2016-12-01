@@ -122,7 +122,7 @@ public class TelaAtualizarController implements Initializable {
                 m.setRegistro1(Integer.valueOf(num1.getText()));
                 m.setRegistro2(Integer.valueOf(num2.getText()));
                 m.setData(dataleitura.getValue());
-                m.setId_user(logado.getId_user());
+                m.setId_usuario(logado.getId_user());
                 m.consumo_de_agua();
                 m.getRegisFinal();
 
@@ -131,7 +131,7 @@ public class TelaAtualizarController implements Initializable {
                 
                                 
                 reaisf.setText(Double.toString(m.getGasto()));
-                litrosf.setText(Double.toString(m.getAgua()));
+                litrosf.setText(Double.toString(m.getRegisFinal()));
 
                 Alert a = new Alert(Alert.AlertType.CONFIRMATION);
                 a.setHeaderText("Média Cadastrada com Sucesso!");

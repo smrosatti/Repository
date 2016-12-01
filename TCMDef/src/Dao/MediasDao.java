@@ -39,10 +39,10 @@ public class MediasDao {
 
             pst.setInt(1, m.getRegistro1());
             pst.setInt(2, m.getRegistro2());
-            pst.setDouble(3, m.getAgua());
+            pst.setDouble(3, m.getRegisFinal());
             pst.setDouble(4, m.getGasto());
             pst.setDate(5, Date.valueOf(m.getData()));
-            pst.setInt(6, m.getId_user());
+            pst.setInt(6, m.getId_usuario());
             pst.execute();
             pst.close();
             conexaobd.close();
@@ -58,11 +58,11 @@ public class MediasDao {
 
             pst.setInt(1, m.getRegistro1());
             pst.setInt(2, m.getRegistro2());
-            pst.setDouble(3, m.getAgua());
+            pst.setDouble(3, m.getRegisFinal());
             pst.setDouble(4, m.getGasto());
             pst.setDate(5, Date.valueOf(m.getData()));
             pst.setInt(6, m.getId());
-            pst.setInt(7, m.getId_user());
+            pst.setInt(7, m.getId_usuario());
             pst.execute();
             pst.close();
             conexaobd.close();
@@ -85,7 +85,7 @@ public class MediasDao {
                 m.setId(rs.getInt("id_media"));
                 ota = rs.getDate("datam");
                 m.setData(ota.toLocalDate());
-                m.setAgua(rs.getDouble("mediaagua"));
+                m.setRegisFinal(rs.getDouble("mediaagua"));
                 m.setGasto(rs.getDouble("mediagastos"));
                 m.setRegistro1(rs.getInt("numerosiniciais"));
                 m.setRegistro2(rs.getInt("numerosfinais"));
