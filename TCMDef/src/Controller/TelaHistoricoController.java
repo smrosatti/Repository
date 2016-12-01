@@ -108,11 +108,11 @@ public class TelaHistoricoController implements Initializable {
 
     public void iniciartabela() {
         try {
-            medialitroc.setCellValueFactory(new PropertyValueFactory("medialitro"));
-            mediarealc.setCellValueFactory(new PropertyValueFactory("media"));
-            dataregc.setCellValueFactory(new PropertyValueFactory("datareg"));
-            dadospc.setCellValueFactory(new PropertyValueFactory("dadosiniciais"));
-            dadossc.setCellValueFactory(new PropertyValueFactory("dadosfinais"));
+            medialitroc.setCellValueFactory(new PropertyValueFactory("agua"));
+            mediarealc.setCellValueFactory(new PropertyValueFactory("gasto"));
+            dataregc.setCellValueFactory(new PropertyValueFactory("data"));
+            dadospc.setCellValueFactory(new PropertyValueFactory("registro1"));
+            dadossc.setCellValueFactory(new PropertyValueFactory("registro2"));
 
             HistoricoDao dao = new HistoricoDao();
             OBListHistorico = dao.getLista();
@@ -154,7 +154,7 @@ public class TelaHistoricoController implements Initializable {
         try {
             ObservableList<Historico> hist = FXCollections.observableArrayList();
             for (Historico h : OBListHistorico) {
-                if (Date.valueOf(h.getDatareg()).equals(Date.valueOf(pesquisardata.getValue()))) {
+                if (Date.valueOf(h.getData()).equals(Date.valueOf(pesquisardata.getValue()))) {
                     hist.add(h);
                 }
             }

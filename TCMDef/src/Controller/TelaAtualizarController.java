@@ -5,10 +5,10 @@
  */
 package Controller;
 
-import Dao.MediasDao;
+import Dao.HistoricoDao;
 import Main.MAtualizar;
 import Main.MEditUser;
-import Model.Medias;
+import Model.Historico;
 import Model.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -107,21 +107,22 @@ public class TelaAtualizarController implements Initializable {
             Alert a = new Alert(Alert.AlertType.WARNING);
             a.setHeaderText("Por favor preencha todos os campos!");
             a.show();
-            
+
         } else {
 
             Historico med = new Historico();
-        med.setRegistro1(Integer.valueOf(textf1.getText()));
-        med.setRegistro2(Integer.valueOf(textf2.getText()));
-        
-        med.setData(datap1.getValue());
-        med.consumo_de_agua();
-        med.getAgua();
-        
-        HistoricoDAO dao = new HistoricoDAO();
-        dao.InsereHistorico(med);
-        
-        limpar();
+            med.setRegistro1(Integer.valueOf(num1.getText()));
+            med.setRegistro2(Integer.valueOf(num2.getText()));
+
+            med.setId_usuario(logado.getId_user());
+            med.setData(dataleitura.getValue());
+            med.consumo_de_agua();
+            med.getAgua();
+
+            HistoricoDao dao = new HistoricoDao();
+            dao.InsereHistorico(med);
+
+            limpar();
         }
     }
 

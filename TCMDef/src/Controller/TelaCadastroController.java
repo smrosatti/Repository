@@ -114,6 +114,10 @@ public class TelaCadastroController implements Initializable {
                 Alert sucess = new Alert(AlertType.INFORMATION);
                 sucess.setHeaderText("Cadastro Feito Com Sucesso!");
                 sucess.show();
+                
+                MLogin lgo = new MLogin();
+                lgo.start(new Stage());
+                
             } else {
                 senha.setBlendMode(BlendMode.RED);
                 senhaconf.setBlendMode(BlendMode.RED);
