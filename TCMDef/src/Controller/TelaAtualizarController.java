@@ -70,22 +70,22 @@ public class TelaAtualizarController implements Initializable {
     }
     
     public void limpar() {
-        textf1.clear();
-        textf2.clear();
-        datap1.setValue(null);
+        num1.clear();
+        num2.clear();
+        dataleitura.setValue(null);
     }
     
     @FXML
     void salvar() {
         Medias med = new Medias();
-        med.setRegistro1(Integer.valueOf(textf1.getText()));
-        med.setRegistro2(Integer.valueOf(textf2.getText()));
+        med.setRegistro1(Integer.valueOf(num1.getText()));
+        med.setRegistro2(Integer.valueOf(num2.getText()));
         
-        med.setData(datap1.getValue());
+        med.setData(dataleitura.getValue());
         med.consumo_de_agua();
         med.getAgua();
         
-        MediasDAO dao = new MediasDAO();
+        MediasDao dao = new MediasDao();
         dao.insereMedia(med);
         
         limpar();

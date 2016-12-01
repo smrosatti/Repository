@@ -8,9 +8,8 @@ package Dao;/*
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
 
-import JDBC.ConnectFactory;
+import JDBC.ConnectionFactory;
 import Model.Medias;
 import java.sql.Connection;
 import java.sql.Date;
@@ -23,12 +22,12 @@ import javafx.collections.ObservableList;
  *
  * @author SARA
  */
-public class MediasDAO {
+public class MediasDao {
 
     private Connection conexaobd;
 
-    public MediasDAO() {
-        this.conexaobd = new ConnectFactory().getConnection();
+    public MediasDao() {
+        this.conexaobd = new ConnectionFactory().getConnection();
     }
 
     public void insereMedia(Medias m) {
