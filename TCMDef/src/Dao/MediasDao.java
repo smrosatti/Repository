@@ -52,7 +52,7 @@ public class MediasDao {
     }
 
     public void update(Medias m) {
-        String sql = "UPDATE medias SET numerosiniciais=?, numerosfinais=?, mediaagua=?, mediagastos=?, datam=? WHERE id_media=? AND id_user=?";
+        String sql = "UPDATE medias SET numerosiniciais = ?, numerosfinais = ?, mediaagua = ?, mediagastos = ?, datam = ? WHERE id_media = ? AND id_user = ?";
         try {
             PreparedStatement pst = conexaobd.prepareStatement(sql);
 
@@ -61,7 +61,7 @@ public class MediasDao {
             pst.setDouble(3, m.getRegisFinal());
             pst.setDouble(4, m.getGasto());
             pst.setDate(5, Date.valueOf(m.getData()));
-            pst.setInt(6, m.getId());
+            pst.setInt(6, m.getId_media());
             pst.setInt(7, m.getId_usuario());
             pst.execute();
             pst.close();
@@ -75,15 +75,14 @@ public class MediasDao {
         Date ota;
         ObservableList<Medias> meds = FXCollections.observableArrayList();
         try {
-            String sql = "SELECT * FROM medias WHERE id_user=?";
+            String sql = "SELECT * FROM medias WHERE id_user = ?";
             PreparedStatement pst = conexaobd.prepareStatement(sql);
             pst.setInt(1, u.getId_user());
-            pst.execute();
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 Medias m = new Medias();
 
-                m.setId(rs.getInt("id_media"));
+                m.setId_media(rs.getInt("id_media"));
                 ota = rs.getDate("datam");
                 m.setData(ota.toLocalDate());
                 m.setRegisFinal(rs.getDouble("mediaagua"));

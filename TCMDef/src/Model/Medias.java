@@ -24,7 +24,6 @@ public class Medias {
     private int registro2;
     private int cont = 0;
     private LocalDate data;
-    private int id;
     private int id_media;
     private int id_usuario;
   
@@ -107,14 +106,6 @@ public class Medias {
 
     public void setData(LocalDate data) {
         this.data = data;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getId_media() {
