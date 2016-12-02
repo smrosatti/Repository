@@ -50,11 +50,11 @@ public class TelaAtualizarController implements Initializable {
 
     @FXML
     private TextField num1;
-    
-     @FXML
+
+    @FXML
     private TextField litrosf;
-     
-      @FXML
+
+    @FXML
     private TextField reaisf;
 
     @FXML
@@ -65,11 +65,15 @@ public class TelaAtualizarController implements Initializable {
 
     @FXML
     private ImageView imguser;
-    
+
     @FXML
     private Button btlimpar;
 
     private static Usuario logado;
+
+    private static Medias med;
+
+    private static Medias select;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -82,8 +86,8 @@ public class TelaAtualizarController implements Initializable {
         btvoltar.setOnMouseClicked((MouseEvent evt) -> {
             cancel();
         });
-        
-        btlimpar.setOnMouseClicked((MouseEvent evt)->{
+
+        btlimpar.setOnMouseClicked((MouseEvent evt) -> {
             limpar();
         });
     }
@@ -98,12 +102,18 @@ public class TelaAtualizarController implements Initializable {
 
     public void btperfil() {
         try {
-
             MEditUser tela = new MEditUser(logado);
             tela.start(new Stage());
-
         } catch (Exception ee) {
             ee.printStackTrace();
+        }
+    }
+
+    public static Float str2Float(String longStr) {
+        try {
+            return Float.parseFloat(longStr);
+        } catch (Exception e) {
+            return 0F;
         }
     }
 
@@ -124,22 +134,36 @@ public class TelaAtualizarController implements Initializable {
                 m.setData(dataleitura.getValue());
                 m.setId_usuario(logado.getId_user());
                 m.consumo_de_agua();
+
                 m.getRegisFinal();
 
                 MediasDao dao = new MediasDao();
                 dao.insereMedia(m);
-                
-                                
-                reaisf.setText(Double.toString(m.getGasto()));
+
+                Float val = (float) (m.getGasto());
+                String valStr = String.format("%06.2f%n", val);
+
+                reaisf.setText(valStr);
                 litrosf.setText(Double.toString(m.getRegisFinal()));
 
-                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+                Alert a = new Alert(Alert.AlertType.INFORMATION);
                 a.setHeaderText("Média Cadastrada com Sucesso!");
                 a.show();
             }
         } catch (Exception ee) {
             ee.printStackTrace();
         }
+    }
+
+    public void teste() {
+        Medias a = new Medias();
+        a.setRegistro1(Integer.valueOf(num1.getText()));
+        a.setRegistro2(Integer.valueOf(num2.getText()));
+        a.consumo_de_agua();
+
+        a.getRegisFinal();
+
+        a.getGasto();
     }
 
     public void cancel() {

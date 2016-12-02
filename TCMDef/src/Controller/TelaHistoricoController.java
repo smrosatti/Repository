@@ -84,7 +84,6 @@ public class TelaHistoricoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         iniciartabela();
         
         btexcluir.setOnMouseClicked((MouseEvent evt)->{
@@ -132,6 +131,7 @@ public class TelaHistoricoController implements Initializable {
             if (selecionado != null) {
                 MediasDao dao = new MediasDao();
                 dao.delete(selecionado);
+                
                 Alert a = new Alert(AlertType.CONFIRMATION);
                 a.setHeaderText("Registro excluído com sucesso!");
                 a.show();

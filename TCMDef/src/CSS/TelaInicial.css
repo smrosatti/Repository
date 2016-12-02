@@ -1,0 +1,23 @@
+.bt{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.lb1{
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font: bold 33px "times new roman";
+}
+
+.lb2{
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font: bold 24px "times new roman";
+}

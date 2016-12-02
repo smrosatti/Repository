@@ -100,16 +100,16 @@ public class MediasDao {
         }
         return meds;
     }
-    
-    public void delete(Medias u){
+
+    public void delete(Medias u) {
         String sql = "DELETE * FROM medias WHERE id_media = ?";
-        try{
+        try {
             PreparedStatement stm = conexaobd.prepareStatement(sql);
             stm.setInt(1, u.getId_media());
             stm.execute();
             stm.close();
             conexaobd.close();
-        }catch(Exception ee){
+        } catch (Exception ee) {
             ee.printStackTrace();
         }
     }

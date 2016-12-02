@@ -1,0 +1,70 @@
+.pane{
+    -fx-background-color: #ffffff;
+    -fx-border-color: #000000;
+}
+
+.lb{
+    -fx-text-alignment: center;
+    -fx-text-fill: #000000;
+    -fx-font: bold 14px "times new roman";
+}
+
+
+
+.button:hover{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    
+}
+
+.button:focused{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+.bt{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+    /*-fx-background-color: transparent;*/
+}
+
+.textfield{
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.datapiker{
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}

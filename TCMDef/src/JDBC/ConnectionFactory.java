@@ -17,7 +17,7 @@ public class ConnectionFactory {
     
     public Connection getConnection(){
         try{
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/tcm","postgres","aluno");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/tcm","postgres","tiago");
         }catch(SQLException sqle){
             System.out.println("Deu ruim no BD");
             throw new RuntimeException(sqle);

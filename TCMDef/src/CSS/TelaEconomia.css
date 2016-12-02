@@ -1,0 +1,38 @@
+.anchor{
+    -fx-background-color: #202020;
+}
+
+.pane{
+    -fx-background-color: #ffffff;
+}
+
+.lb{
+    -fx-text-fill: #000000;
+    -fx-font: bold 18px "times new roman";
+}
+
+.bt{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.datapiker{
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 25;
+    -fx-pref-width: 175;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}

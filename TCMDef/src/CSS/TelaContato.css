@@ -1,0 +1,67 @@
+.anchor{
+    -fx-background-color: #202020;
+}
+
+.bt{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-min-height: 25;
+    -fx-min-width: 60;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.bt1{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-min-height: 25;
+    -fx-min-width: 140;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.lb{
+    -fx-text-fill: #ffffff;
+    -fx-font: bolder 40px "times new roman";
+}
+
+.lb1{
+    -fx-text-fill: #ffffff;
+    -fx-font: bolder 22px "Times New Roman";
+}
+
+.textfield{
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 25;
+    -fx-pref-width: 234;
+    -fx-font: 100 12px "times new roman";
+}
+
+.textarea{
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 200;
+    -fx-pref-width: 234;
+    -fx-font: 100 12px "times new roman";
+}

@@ -1,0 +1,55 @@
+.menubar{
+    -fx-background-color: #6495ED; /*muda a cor da barra inteira para branco*/
+    -fx-border-color: #4169E1; /*nao apresentou qualquer mudanca*/
+    -fx-blend-mode: darken;
+    -fx-effect: DropShadow(three-pass-box,rgba(0,0,0,1),26.14,0.1,1.0,1.0);
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+.bt{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #317DFF;
+    -fx-text-fill: #ffffff;
+    -fx-min-height: 25;
+    -fx-min-width: 150;
+    -fx-font: bold 13px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.bts{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #317DFF;
+    -fx-text-fill: #ffffff;
+    -fx-min-height: 25;
+    -fx-min-width: 50;
+    -fx-font: bold 13px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.datapiker{
+    -fx-border-radius: 5;
+    -fx-background-insets: 5;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+    -fx-border-color: #000000;
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 25;
+    -fx-pref-width: 197;
+}
+
+.lb{
+    -fx-text-fill: black;
+    -fx-text-alignment: center;
+    -fx-font: bold 13px "times new roman";
+}

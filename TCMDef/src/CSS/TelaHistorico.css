@@ -1,0 +1,77 @@
+.anchor{
+    -fx-background-color: black;
+}
+
+.lb{
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font: bold 25px "times new roman";
+}
+
+.lb1{
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font: bold 14px "times new roman";
+}
+
+.button:hover{
+    -fx-border-color: red;
+    -fx-border-radius: 5px;
+    -fx-border-insets: 0px;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+
+}
+
+.button:focused{
+    -fx-border-color: red;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+.bt{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.textfield{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-font: bold 12px "times new roman";
+}
+
+.table{
+    -fx-background-color: #303030;
+}
+
+.table1{
+    -fx-font: bold 12px "times new roman";
+    -fx-text-fill: #000000;
+    -fx-background-color: #1E90FF;
+}
+
+.menubutton{
+    -fx-border-color: #000000;
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+    -fx-min-height: 25;
+    -fx-min-width: 133;
+}

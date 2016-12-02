@@ -1,0 +1,63 @@
+/*Isso é só o que cada coisa faz, o que ja tiver comentario vai ficar sem!
+  O nome, acredito eu que seja irrelevante, é só pra quando for mexer pra encontrar
+  então pode deixar o nome de pudim se quiser, mas saiba a que se refere!
+  Tenho que descobrir se o hover e o focused tende a ser diferente se o nome "button"
+  for "bt" ou algo do genero!
+*/
+
+.anchor{
+    -fx-background-color: #000000;
+}
+
+.label{ /*Definindo o que terá na label*/
+    -fx-text-alignment: center; /*Como ficara o testo, justificado, centralizado, etc*/
+    -fx-text-fill: #000000; /*Cor do texto. Pode usar por nome, hex, rgb e rgba*/
+    -fx-font: bold 14px "times new roman"; /*Define como será a fonte:
+     negrito/italico/etc. Tamanho da fonte(px obrigatorio). Nome da fonte.*/
+}
+
+.button{ /*Definindo configuração do botão*/
+    -fx-border-color: #000000; /*Cor da borda*/
+    -fx-border-insets: 0; /*Evita que a borda sofra passagem do fundo*/
+    -fx-border-radius: 5; /*Curvatura da borda*/
+    -fx-background-radius: 5; /*Curvatura do fundo*/
+    -fx-background-insets: 0; /*Evita que o fundo passe a borda*/
+    -fx-background-color: #ffffff; /*Cor do fundo*/
+    -fx-text-fill: #000000;
+    -fx-font: bold 12px "times new roman";
+    -fx-text-alignment: center;
+}
+
+.button:hover{ /*Quando passar com o mouse em cima, vai acontecer o que estiver dentro das chaves*/
+    -fx-border-color: red;
+
+}
+
+.button:focused{ /*Quando o botão estiver em foco, vai acontecer isso, no caso usando as setas*/
+    -fx-border-color: red;
+}
+
+.textfield{
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-font: bold 12px "times new roman";
+    -fx-min-height: 25; /*Largura*/
+    -fx-min-width: 215; /*Comprimento*/
+    -fx-text-alignment: center;
+}
+
+.menubar{
+    -fx-background-color: #6495ED;
+    -fx-border-color: #4169E1;
+    -fx-blend-mode: darken; /*Só usei, não sei exatamente o que faz!*/
+    -fx-effect: DropShadow(three-pass-box,rgba(0,0,0,1),26.14,0.1,1.0,1.0); /*Define a sombra do menu bar*/
+    -fx-border-insets: 0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
