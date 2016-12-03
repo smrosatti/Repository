@@ -89,8 +89,8 @@ public class TelaCadastroController implements Initializable {
             Imagem();
         });
     }
-    
-     public void CadUser() {
+
+    public void CadUser() {
         try {
             if (nome.getText().equals("") || sobrenome.getText().equals("") || usuario.getText().equals("") || email.getText().equals("") || senha.getText().equals("") || senhaconf.getText().equals("")) {
                 Alert erro = new Alert(AlertType.ERROR);
@@ -108,15 +108,15 @@ public class TelaCadastroController implements Initializable {
                 UsuarioDao dao = new UsuarioDao();
                 dao.insereUsuario(u);
 
-                Cancela();
-
                 Alert sucess = new Alert(AlertType.INFORMATION);
                 sucess.setHeaderText("Cadastro Feito Com Sucesso!");
                 sucess.show();
                 
+                Cancela();
+
                 MLogin lgo = new MLogin();
                 lgo.start(new Stage());
-                
+
             } else {
                 senha.setBlendMode(BlendMode.RED);
                 senhaconf.setBlendMode(BlendMode.RED);
