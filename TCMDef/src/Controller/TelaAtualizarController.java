@@ -8,6 +8,7 @@ package Controller;
 import Dao.MediasDao;
 import Main.MAtualizar;
 import Main.MEditUser;
+import Main.MPrincipal;
 import Model.Medias;
 import Model.Usuario;
 import java.net.URL;
@@ -146,9 +147,14 @@ public class TelaAtualizarController implements Initializable {
                 reaisf.setText(valStr);
                 litrosf.setText(Double.toString(m.getRegisFinal()));
 
+                MPrincipal tela = new MPrincipal(logado);
+                tela.start(new Stage());
+
                 Alert a = new Alert(Alert.AlertType.INFORMATION);
                 a.setHeaderText("Média Cadastrada com Sucesso!");
                 a.show();
+                
+                MAtualizar.getStage().close();
             }
         } catch (Exception ee) {
             ee.printStackTrace();
@@ -169,6 +175,8 @@ public class TelaAtualizarController implements Initializable {
     public void cancel() {
         try {
             MAtualizar.getStage().close();
+            MPrincipal tela = new MPrincipal(logado);
+            tela.start(new Stage());
         } catch (Exception ee) {
             ee.printStackTrace();
         }

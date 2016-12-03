@@ -11,9 +11,9 @@
 
 <AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="492.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaInicialController">
    <children>
-      <ImageView fx:id="imagev1" fitHeight="492.0" fitWidth="654.0" layoutY="-1.0" pickOnBounds="true">
+      <ImageView fx:id="imagev1" fitHeight="492.0" fitWidth="654.0" layoutY="-1.0" opacity="0.7" pickOnBounds="true">
          <image>
-            <Image url="@../Imagem/principal%203.jpg" />
+            <Image url="@../Imagem/TelaInicial.jpg" />
          </image>
       </ImageView>
       <Button fx:id="login" layoutX="438.0" layoutY="403.0" mnemonicParsing="false" onAction="#log" styleClass="bt" stylesheets="@../CSS/TelaInicial.css" text="Login" />

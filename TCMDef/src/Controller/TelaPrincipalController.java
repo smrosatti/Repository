@@ -67,6 +67,8 @@ public class TelaPrincipalController implements Initializable {
     private Label nome;
     @FXML
     private Label sobrenomet;
+    @FXML
+    private Label data2;
 
     @FXML
     private DatePicker datap;
@@ -83,7 +85,8 @@ public class TelaPrincipalController implements Initializable {
             ObservableList<Medias> medias = dao.getLista(log);
             for (int i = 0; i < medias.size(); i++) {
                 if (i+1 == medias.size()) {
-                    datap.setValue(medias.get(i).getData());
+                    //datap.setValue(medias.get(i).getData());
+                    data2.setText(String.valueOf(medias.get(i).getData()));
                 }
             }
             try {
@@ -126,7 +129,7 @@ public class TelaPrincipalController implements Initializable {
 
     public void historico() {
         try {
-            MHistorico tela = new MHistorico();
+            MHistorico tela = new MHistorico(log);
             tela.start(new Stage());
         } catch (Exception ee) {
             ee.printStackTrace();
@@ -137,6 +140,7 @@ public class TelaPrincipalController implements Initializable {
         try {
             MAtualizar tela = new MAtualizar(log);
             tela.start(new Stage());
+            MPrincipal.getStage().close();
         } catch (Exception ee) {
             ee.printStackTrace();
         }
