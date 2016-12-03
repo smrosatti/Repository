@@ -6,6 +6,7 @@
 package Main;
 
 import java.io.IOException;
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
  *
  * @author vinn1
  */
-public class MListarUsers {
+public class MListarUsers extends Application{
     
     private static Stage stage;
 
@@ -46,7 +47,7 @@ public class MListarUsers {
     }
     
     public static void main(String[] args) {
-        
+        launch(args);
     }
     
 }

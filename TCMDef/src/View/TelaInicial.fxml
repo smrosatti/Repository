@@ -9,32 +9,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaInicialController">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="492.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaInicialController">
    <children>
-      <ImageView fitHeight="532.0" fitWidth="653.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagev1" fitHeight="492.0" fitWidth="654.0" layoutY="-1.0" pickOnBounds="true">
          <image>
-            <Image url="@../Imagem/TelaInicial.jpg" />
+            <Image url="@../Imagem/principal%203.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="login" layoutX="400.0" layoutY="403.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-color: black;" text="Login">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="cadastro" layoutX="154.0" layoutY="403.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: white;" text="Cadastro">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font>
-      </Button>
-      <Text layoutX="180.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-Vindo ao OverSpending!" textAlignment="CENTER" wrappingWidth="273.33984375">
-         <font>
-            <Font name="Arial Black" size="33.0" />
-         </font>
-      </Text>
-      <Text fontSmoothingType="LCD" layoutX="164.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Controle seus gastos com água, economize dinheiro e faça bem ao meio-ambiente!" textAlignment="CENTER" wrappingWidth="305.55078125">
-         <font>
-            <Font name="Arial Bold" size="24.0" />
-         </font>
-      </Text>
+      <Button fx:id="login" layoutX="438.0" layoutY="403.0" mnemonicParsing="false" onAction="#log" styleClass="bt" stylesheets="@../CSS/TelaInicial.css" text="Login" />
+      <Button fx:id="cadastro" layoutX="168.0" layoutY="403.0" mnemonicParsing="false" onAction="#cad" styleClass="bt" stylesheets="@../CSS/TelaInicial.css" text="Cadastro" />
+      <Label fx:id="lb1" layoutX="219.0" layoutY="110.0" styleClass="lb1" stylesheets="@../CSS/TelaInicial.css" text="Bem-Vindo ao&#10;OverSpending!" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="219.0" />
+      <Label fx:id="lb2" layoutX="168.0" layoutY="246.0" styleClass="lb2" stylesheets="@../CSS/TelaInicial.css" text="Controle seus gastos com água,&#10;economize dinheiro e&#10;faça bem ao meio-ambiente!" AnchorPane.leftAnchor="168.0" AnchorPane.rightAnchor="168.0" />
    </children>
 </AnchorPane>
