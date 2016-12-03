@@ -5,64 +5,40 @@
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import java.net.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaCadastroController">
-   <children>
-      <ImageView fitHeight="532.0" fitWidth="653.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Imagem/TemaFundo.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="usuario" layoutX="131.0" layoutY="62.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu nome de usuário..." style="-fx-border-color: black;" />
-      <TextField fx:id="nome" layoutX="131.0" layoutY="121.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu nome..." style="-fx-border-color: black;" />
-      <TextField fx:id="sobrenome" layoutX="131.0" layoutY="178.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu sobrenome..." style="-fx-border-color: black;" />
-      <TextField fx:id="email" layoutX="131.0" layoutY="235.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu E-mail..." style="-fx-border-color: black;" />
-      <PasswordField fx:id="senha" layoutX="131.0" layoutY="291.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira uma senha..." style="-fx-border-color: black;" />
-      <PasswordField fx:id="senhaconf" layoutX="131.0" layoutY="348.0" prefHeight="27.0" prefWidth="232.0" promptText="Confirme sua senha..." style="-fx-border-color: black;" />
-      <Button fx:id="confirm" layoutX="131.0" layoutY="457.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Confirmar">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font></Button>
-      <Button fx:id="cancel" layoutX="466.0" layoutY="457.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Cancelar">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font></Button>
-      <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário:">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font></Text>
-      <Text layoutX="81.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font></Text>
-      <Text layoutX="43.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobrenome:">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font></Text>
-      <Text layoutX="77.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font></Text>
-      <Text layoutX="77.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font></Text>
-      <Text layoutX="12.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmar senha:">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font></Text>
-      <ImageView fx:id="imagemuser" fitHeight="150.0" fitWidth="150.0" layoutX="465.0" layoutY="60.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Imagem/user.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="mudarimagem" layoutX="465.0" layoutY="236.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Mudar Imagem">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-      </Button>
-   </children>
+    <stylesheets>
+        <URL value="@../CSS/TelaCadastro.css" />
+    </stylesheets>
+    <children>
+        <ImageView fitHeight="532.0" fitWidth="653.0" pickOnBounds="true">
+            <image>
+                <Image url="@../Imagem/TemaFundo.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="imagemuser" fitHeight="150.0" fitWidth="150.0" layoutX="465.0" layoutY="60.0" pickOnBounds="true">
+            <image>
+                <Image url="@../Imagem/user.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="71.0" layoutY="66.0" styleClass="lb" text="Usuário:" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="65.0" />
+        <Label layoutX="81.0" layoutY="141.0" styleClass="lb" text="Nome:" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="125.0" />
+        <Label layoutX="43.0" layoutY="198.0" styleClass="lb" text="Sobrenome:" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="185.0" />
+        <Label layoutX="77.0" layoutY="254.0" styleClass="lb" text="E-mail:" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="245.0" />
+        <Label layoutX="77.0" layoutY="310.0" styleClass="lb" text="Senha:" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="305.0" />
+        <Label layoutX="12.0" layoutY="368.0" styleClass="lb" text="Confirmar senha:" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="365.0" />
+        <TextField fx:id="usuario" layoutX="143.0" layoutY="61.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu nome de usuário..." styleClass="textfield" AnchorPane.topAnchor="61.0" />
+        <TextField fx:id="nome" layoutX="143.0" layoutY="121.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu nome..." styleClass="textfield" AnchorPane.topAnchor="121.0" />
+        <TextField fx:id="sobrenome" layoutX="143.0" layoutY="181.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu sobrenome..." styleClass="textfield" AnchorPane.topAnchor="181.0" />
+        <TextField fx:id="email" layoutX="143.0" layoutY="241.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira seu E-mail..." styleClass="textfield" AnchorPane.topAnchor="241.0" />
+        <PasswordField fx:id="senha" layoutX="143.0" layoutY="301.0" prefHeight="27.0" prefWidth="232.0" promptText="Insira uma senha..." styleClass="textfield" AnchorPane.topAnchor="301.0" />
+        <PasswordField fx:id="senhaconf" layoutX="143.0" layoutY="361.0" prefHeight="27.0" prefWidth="232.0" promptText="Confirme sua senha..." styleClass="textfield" AnchorPane.topAnchor="361.0" />
+        <Button fx:id="mudarimagem" layoutX="465.0" layoutY="236.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" styleClass="bt" text="Mudar Imagem" />
+        <Button fx:id="confirm" layoutX="143.0" layoutY="418.0" mnemonicParsing="false" styleClass="bt" text="Confirmar" />
+        <Button fx:id="cancel" layoutX="311.0" layoutY="418.0" mnemonicParsing="false" styleClass="bt" text="Cancelar" />
+    </children>
 </AnchorPane>
