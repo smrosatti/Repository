@@ -37,7 +37,7 @@
             </font>
         </Label>
         <Label layoutX="289.0" layoutY="393.0" styleClass="lb" text="Última Atualização:" />
-        <DatePicker fx:id="datap" editable="false" layoutX="472.0" layoutY="389.0" prefHeight="25.0" prefWidth="197.0" styleClass="datapiker" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="44.0" />
+        <DatePicker fx:id="datap" disable="true" editable="false" layoutX="472.0" layoutY="389.0" prefHeight="25.0" prefWidth="197.0" styleClass="datapiker" visible="false" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="44.0" />
         <MenuBar blendMode="DARKEN" layoutX="10.0" layoutY="1.0" prefHeight="25.0" prefWidth="633.0" styleClass="menubar" AnchorPane.topAnchor="10.0">
             <menus>
                 <Menu mnemonicParsing="true" text="Usuário">
@@ -64,5 +64,6 @@
         <Button fx:id="hist" contentDisplay="CENTER" layoutX="41.0" layoutY="286.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" styleClass="bt" text="Histórico de Gastos" AnchorPane.topAnchor="286.0" />
         <Button fx:id="ec" layoutX="41.0" layoutY="335.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" styleClass="bt" text="Economia" AnchorPane.topAnchor="335.0" />
         <Button fx:id="sair" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="50.0" styleClass="bts" text="Sair" />
+      <Label fx:id="data2" layoutX="420.0" layoutY="393.0" prefHeight="16.0" prefWidth="169.0" styleClass="lb" text="Insira novos dados" textAlignment="CENTER" />
     </children>  
 </AnchorPane>

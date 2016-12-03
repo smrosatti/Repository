@@ -110,7 +110,7 @@ public class TelaCadastroController implements Initializable {
 
                 Alert sucess = new Alert(AlertType.INFORMATION);
                 sucess.setHeaderText("Cadastro Feito Com Sucesso!");
-                sucess.show();
+                sucess.showAndWait();
                 
                 Cancela();
 

@@ -5,6 +5,8 @@
  */
 package Main;
 
+import Controller.TelaHistoricoController;
+import Model.Usuario;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -23,6 +25,11 @@ import javafx.stage.Stage;
 public class MHistorico extends Application {
     
     private static Stage stage;
+    
+    public MHistorico(Usuario u){
+    TelaHistoricoController.setLogado(u);
+    
+    }
     
     public static Stage getStage(){
         return MHistorico.stage;
