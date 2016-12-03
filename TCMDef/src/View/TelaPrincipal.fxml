@@ -38,7 +38,7 @@
                         <MenuItem mnemonicParsing="true" onAction="#Editar_Usuario" text="Editar Perfil..." />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="true" text="Gastos">
+                <Menu mnemonicParsing="true" text="Dicas">
                     <items>
                         <MenuItem mnemonicParsing="true" onAction="#Dicas_Consumo" text="Dicas de Consumo..." /> 
                     </items>
@@ -53,6 +53,6 @@
         <Button fx:id="atualiza" layoutX="41.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" styleClass="bt" text="Inserir Dados" AnchorPane.topAnchor="232.0" />
         <Button fx:id="hist" contentDisplay="CENTER" layoutX="41.0" layoutY="286.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" styleClass="bt" text="Histórico de Gastos" AnchorPane.topAnchor="286.0" />
         <Button fx:id="ec" layoutX="41.0" layoutY="335.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" styleClass="bt" text="Economia" AnchorPane.topAnchor="335.0" />
-        <Button fx:id="sair" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="50.0" styleClass="bts" text="Logout" />
+        <Button fx:id="sair" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" styleClass="bts" text="Logout" />
     </children>  
 </AnchorPane>
