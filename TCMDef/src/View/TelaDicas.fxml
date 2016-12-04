@@ -16,7 +16,7 @@
             </image>
         </ImageView>
         <Label fx:id="lb1" layoutX="25.0" layoutY="14.0" styleClass="lb" stylesheets="@../CSS/TelaDicas.css" text="Dicas:" />
-        <Button fx:id="bt1" layoutX="25.0" layoutY="458.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="bt" stylesheets="@../CSS/TelaDicas.css" text="Voltar" />
+        <Button fx:id="bt1" layoutX="25.0" layoutY="458.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="69.0" styleClass="bt" stylesheets="@../CSS/TelaDicas.css" text="Voltar" />
         <ListView fx:id="listv1" layoutX="226.0" layoutY="46.0" prefHeight="399.0" prefWidth="601.0" styleClass="list" stylesheets="@../CSS/TelaDicas.css" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="45.0" />
     </children>
 </AnchorPane>

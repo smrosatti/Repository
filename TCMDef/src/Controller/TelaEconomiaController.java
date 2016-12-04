@@ -5,23 +5,33 @@
  */
 package Controller;
 
+import Main.MEconomia;
+import Model.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author SARA
- */
 public class TelaEconomiaController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    private static Usuario logado;
+
+    public static Usuario getLogado() {
+        return logado;
+    }
+
+    public static void setLogado(Usuario aLogado) {
+        logado = aLogado;
+    }
+
+    @FXML
+    void voltar() {
+        MEconomia.getStage().close();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        
+    }
+
 }

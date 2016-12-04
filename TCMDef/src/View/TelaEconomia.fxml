@@ -15,7 +15,7 @@
         <URL value="@../CSS/TelaEconomia.css" />
     </stylesheets>
     <children>
-        <ImageView fx:id="imagev1" fitHeight="532.0" fitWidth="653.0" layoutX="-2.0" pickOnBounds="true">
+        <ImageView fx:id="imagev1" fitHeight="532.0" fitWidth="653.0" layoutX="-2.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <image>
                 <Image url="@../Imagem/TemaFundo.jpg" />
             </image>
@@ -26,7 +26,7 @@
         <DatePicker fx:id="dat1" layoutX="144.0" layoutY="57.0" prefHeight="25.0" prefWidth="223.0" styleClass="datapiker" stylesheets="@../CSS/TelaEconomia.css" />
         <DatePicker fx:id="dat2" layoutX="144.0" layoutY="113.0" prefHeight="25.0" prefWidth="223.0" styleClass="datapiker" stylesheets="@../CSS/TelaEconomia.css" />
         <Button fx:id="bt1" layoutX="442.0" layoutY="77.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="171.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Atualizar Gráfico" />
-        <Button fx:id="bt3" layoutX="38.0" layoutY="475.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Voltar" AnchorPane.leftAnchor="38.0" />
+        <Button fx:id="bt3" layoutX="38.0" layoutY="475.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="61.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Voltar" AnchorPane.leftAnchor="38.0" />
         <LineChart fx:id="linec" layoutX="39.0" layoutY="165.0" prefHeight="234.0" prefWidth="575.0">
             <xAxis>
                 <CategoryAxis fx:id="categ" side="BOTTOM" />

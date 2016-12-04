@@ -101,7 +101,7 @@ public class TelaHistoricoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         iniciartabela();
-        
+
         tablehistorico.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
@@ -132,13 +132,13 @@ public class TelaHistoricoController implements Initializable {
         btexcluirtudo.setOnMouseClicked((MouseEvent evt) -> {
             excluirtudo();
         });
-        
+
         gerarpdf.setOnMouseClicked((MouseEvent evt) -> {
             gerarpdf();
         });
 
     }
-
+    
     public void gerarpdf() {
         Document doc = new Document();
 
@@ -224,18 +224,24 @@ public class TelaHistoricoController implements Initializable {
 
     public void pesquisar() {
         try {
-            ObservableList<Medias> hist = FXCollections.observableArrayList();
-            for (Medias h : OBListHistorico) {
-                if (Date.valueOf(h.getData()).equals(Date.valueOf(pesquisardata.getValue()))) {
-                    hist.add(h);
+            if (pesquisardata.toString().trim().isEmpty()) {
+                Alert al = new Alert(AlertType.ERROR);
+                al.setHeaderText("Informe uma data para pesquisar!");
+                al.showAndWait();
+            } else {
+                ObservableList<Medias> hist = FXCollections.observableArrayList();
+                for (Medias h : OBListHistorico) {
+                    if (Date.valueOf(h.getData()).equals(Date.valueOf(pesquisardata.getValue()))) {
+                        hist.add(h);
+                    }
                 }
+                tablehistorico.setItems(hist);
             }
-            tablehistorico.setItems(hist);
         } catch (Exception ee) {
             ee.printStackTrace();
         }
     }
-
+    
     public void atualizar() {
         try {
             MediasDao dao = new MediasDao();

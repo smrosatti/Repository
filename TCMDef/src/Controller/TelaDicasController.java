@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Main.MDicas;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -45,6 +46,11 @@ public class TelaDicasController implements Initializable {
         
         ObservableList<String> obs = FXCollections.observableArrayList(a," ",b," ",c," ",d," ",e," ",f," ",g," ",h," ",i," ",j);
         listv1.setItems(obs);
+    }
+    
+    @FXML
+    void voltar(){
+        MDicas.getStage().close();
     }
     
     @Override

@@ -6,6 +6,7 @@
 package Model;
 
 import java.time.LocalDate;
+import javafx.scene.control.Alert;
 
 /**
  *
@@ -26,9 +27,18 @@ public class Medias {
     private LocalDate data;
     private int id_media;
     private int id_usuario;
+    private int diferenca;
+    private int d = 0;
 
     public void consumo_de_agua() {
         metrocubico = (1000);
+
+        diferenca = registro2 - registro1;
+        
+        while (diferenca != 10){
+            diferenca = diferenca - 1;
+            d++;
+        }
 
         registro1 = registro1 * metrocubico;
         registro2 = registro2 * metrocubico;
@@ -38,7 +48,7 @@ public class Medias {
         if (registro1 <= 10000 && regisFinal <= 10000) {
             gasto = (33.74);
         } else {
-            while (cont < (registro2 / metrocubico)) {
+            while (cont < d) {
                 if (cont == 0) {
                     gasto = (33.74);
                 }
