@@ -45,7 +45,7 @@
                 </Menu>
                 <Menu mnemonicParsing="true" text="Ajuda">
                     <items>
-                        <MenuItem mnemonicParsing="true" text="Sobre..." /> 
+                        <MenuItem mnemonicParsing="true" onAction="#tutorial" text="Tutorial..." /> 
                     </items>
                 </Menu>
             </menus>

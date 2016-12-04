@@ -20,6 +20,8 @@ import java.io.File;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -193,7 +195,16 @@ public class TelaPrincipalController implements Initializable {
         } catch (Exception ee) {
             ee.printStackTrace();
         }
-
+    }
+    
+    @FXML
+    void tutorial(){
+        TelaTutorialController tela = new TelaTutorialController();
+        try {
+            tela.start(new Stage());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override

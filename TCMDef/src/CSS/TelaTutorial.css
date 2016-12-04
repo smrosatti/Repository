@@ -1,0 +1,33 @@
+.list{
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-font: bolder 12px "times new roman";
+}
+
+.pane{
+    -fx-background-color: #ffffff;
+    -fx-border-color: #000000;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.anchor{
+    -fx-background-color: #303030;
+}
+
+.bt{
+    -fx-font: bolder 12px "times new roman";
+    -fx-background-color: #ffffff;
+    -fx-border-color: #000000;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}

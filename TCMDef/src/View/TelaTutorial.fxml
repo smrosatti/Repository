@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="400.0" prefWidth="600.0" styleClass="anchor" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaTutorialController">
+    <stylesheets>
+        <URL value="@../CSS/TelaTutorial.css" />
+    </stylesheets>
+    <children>
+      <StackPane fx:id="stack" layoutX="45.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" styleClass="pane" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="50.0">
+         <children>
+              <ImageView fx:id="img" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true">
+                  <image>
+                      <Image url="@../Imagem/Registro_Agua.jpg" />
+                  </image>
+              </ImageView>
+         </children>
+      </StackPane>
+      <ListView fx:id="list" layoutX="355.0" layoutY="50.0" prefHeight="300.0" prefWidth="200.0" styleClass="list" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="50.0" />
+      <MenuButton layoutX="149.0" layoutY="26.0" mnemonicParsing="false" styleClass="bt" text="Tutorial">
+        <items>
+          <MenuItem fx:id="menu1" mnemonicParsing="false" onAction="#img" text="Registro" />
+          <MenuItem fx:id="menu2" mnemonicParsing="false" onAction="#img1" text="Atualizar dados" />
+        </items>
+      </MenuButton>
+      <Button fx:id="bt" layoutX="45.0" layoutY="363.0" mnemonicParsing="false" onAction="#sair" styleClass="bt" text="Sair" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="45.0" />
+    </children>
+</AnchorPane>
