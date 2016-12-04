@@ -132,6 +132,7 @@ public class TelaPrincipalController implements Initializable {
         try {
             MHistorico tela = new MHistorico(log);
             tela.start(new Stage());
+            MPrincipal.getStage().close();
         } catch (Exception ee) {
             ee.printStackTrace();
         }

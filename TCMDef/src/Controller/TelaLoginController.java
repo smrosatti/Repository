@@ -95,7 +95,7 @@ public class TelaLoginController implements Initializable {
         }
     }
 
-    public void Logar() {
+     public void Logar() {
         try {
             UsuarioDao dao = new UsuarioDao();
             ObservableList<Usuario> users = dao.getLista();
