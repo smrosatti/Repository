@@ -35,7 +35,7 @@ public class MDicas extends Application {
         
         Scene scene = new Scene(root);
         
-        primaryStage.setTitle("Dicas de Consumo Consciente");
+        primaryStage.setTitle("Dicas de Consumo");
         primaryStage.setScene(scene);
         primaryStage.show();
         
