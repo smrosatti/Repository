@@ -29,14 +29,7 @@ public class TelaEconomiaController implements Initializable {
 
     @FXML
     void voltar() {
-        TelaPrincipalController tp = new TelaPrincipalController();
-        try {
-            MPrincipal mp = new MPrincipal(logado);
-            mp.start(new Stage());
-            MEconomia.getStage().close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        MEconomia.getStage().close();
     }
 
     @Override

@@ -35,7 +35,5 @@
                 <NumberAxis fx:id="number" side="LEFT" />
             </yAxis>
         </LineChart>
-      <ImageView fx:id="img" fitHeight="15.0" fitWidth="15.0" layoutX="624.0" layoutY="500.0" pickOnBounds="true" visible="false" />
-      <Label fx:id="lbl" layoutX="577.0" layoutY="492.0" visible="false" />
     </children>
 </AnchorPane>
