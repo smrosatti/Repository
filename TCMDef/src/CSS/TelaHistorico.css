@@ -52,14 +52,18 @@
     -fx-font: bold 12px "times new roman";
 }
 
-.table{
+.table .table-view{
     -fx-background-color: #303030;
 }
 
-.table1{
+.table-cell.table1 {
+    -fx-background-color: transparent;
+}
+ 
+.table-view .column-header.table1 {
+    -fx-base: #1E90FF;
     -fx-font: bold 12px "times new roman";
     -fx-text-fill: #000000;
-    -fx-background-color: #1E90FF;
 }
 
 .datapiker{

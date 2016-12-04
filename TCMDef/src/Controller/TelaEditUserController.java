@@ -112,7 +112,7 @@ public class TelaEditUserController implements Initializable {
                 alterado = u;
                 setUser(alterado);
 
-                Alert erro = new Alert(AlertType.CONFIRMATION);
+                Alert erro = new Alert(AlertType.INFORMATION);
                 erro.setHeaderText("Alterações feitas com sucesso!");
                 erro.showAndWait();
 

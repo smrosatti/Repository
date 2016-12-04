@@ -7,6 +7,7 @@ package Controller;
 
 import Dao.UsuarioDao;
 import Main.MCadastro;
+import Main.MInicial;
 import Main.MLogin;
 import Model.Usuario;
 import java.io.File;
@@ -64,7 +65,6 @@ public class TelaCadastroController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         confirm.setOnMouseClicked((MouseEvent evt) -> {
             CadUser();
         });
@@ -150,9 +150,10 @@ public class TelaCadastroController implements Initializable {
     }
 
     public void Cancela() {
+        MInicial tela = new MInicial();
         try {
+            tela.start(new Stage());
             MCadastro.getStage().close();
-
         } catch (Exception ee) {
             ee.printStackTrace();
         }
