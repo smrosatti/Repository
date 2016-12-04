@@ -138,7 +138,7 @@ public class TelaHistoricoController implements Initializable {
         });
 
     }
-
+    
     public void gerarpdf() {
         Document doc = new Document();
 
@@ -241,7 +241,7 @@ public class TelaHistoricoController implements Initializable {
             ee.printStackTrace();
         }
     }
-
+    
     public void atualizar() {
         try {
             MediasDao dao = new MediasDao();
@@ -277,7 +277,7 @@ public class TelaHistoricoController implements Initializable {
             MHistorico.getStage().close();
             MPrincipal tela = new MPrincipal(logado);
             tela.start(new Stage());
-
+            
         } catch (Exception ee) {
             ee.printStackTrace();
         }
