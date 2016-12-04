@@ -7,25 +7,26 @@ package Controller;
 
 import Dao.MediasDao;
 import Main.MAtualizar;
-import Main.MCadastro;
 import Main.MDicas;
 import Main.MEconomia;
 import Main.MEditUser;
 import Main.MHistorico;
 import Main.MListarUsers;
+import Main.MLogin;
 import Main.MPrincipal;
 import Model.Medias;
 import Model.Usuario;
 import java.io.File;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -99,7 +100,7 @@ public class TelaPrincipalController implements Initializable {
         }
     }
 
-    public void Listar_Usuario(ActionEvent evt) {
+    public void Listar_Usuario() {
         try {
             MListarUsers user = new MListarUsers();
             user.start(new Stage());
@@ -156,38 +157,38 @@ public class TelaPrincipalController implements Initializable {
     }
 
     public void sair() {
+        Alert t = new Alert(AlertType.CONFIRMATION);
+        t.setTitle("Deseja Sair?!");
+        t.setHeaderText("Isso encerrara sua seção! Continuar?");
+        Optional<ButtonType> bt = t.showAndWait();
+
+        if (bt.get() == ButtonType.OK) {
+            MLogin tela = new MLogin();
+            try {
+                tela.start(new Stage());
+                MPrincipal.getStage().close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+
+        }
+    }
+
+    @FXML
+    void Editar_Usuario() {
         try {
-            Alert sair = new Alert(AlertType.WARNING);
-            sair.setHeaderText("Deseja Mesmo Sair?");
+            MEditUser edit = new MEditUser(log);
+            edit.start(new Stage());
             MPrincipal.getStage().close();
         } catch (Exception ee) {
             ee.printStackTrace();
         }
-    }
-
-    @FXML
-    private void Cadastrar_Usuario(ActionEvent evtcad) {
-        try {
-            MCadastro cad = new MCadastro();
-            cad.start(new Stage());
-        } catch (Exception ee) {
-            ee.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void Editar_Usuario(ActionEvent evtedit) {
-        try {
-            MEditUser edit = new MEditUser(log);
-            edit.start(new Stage());
-        } catch (Exception ee) {
-            ee.printStackTrace();
-        }
 
     }
 
     @FXML
-    private void Dicas_Consumo(ActionEvent evtdicas) {
+    void Dicas_Consumo() {
         try {
             MDicas dicas = new MDicas();
             dicas.start(new Stage());

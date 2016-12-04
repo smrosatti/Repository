@@ -26,36 +26,26 @@
             </image>
         </ImageView>
         <Label layoutX="489.0" layoutY="224.0" styleClass="lb" text="Bem - Vindo" AnchorPane.leftAnchor="490.0" AnchorPane.topAnchor="225.0" />
-        <Label fx:id="nome" alignment="CENTER" layoutX="406.0" layoutY="258.0" prefHeight="21.0" prefWidth="231.0" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="406.0" AnchorPane.topAnchor="258.0">
-            <font>
-                <Font name="System Bold" size="15.0" />
-            </font>
-        </Label>
-        <Label fx:id="sobrenomet" alignment="CENTER" layoutX="406.0" layoutY="291.0" prefHeight="21.0" prefWidth="231.0" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="177.0" AnchorPane.leftAnchor="406.0" AnchorPane.topAnchor="291.0">
-            <font>
-                <Font name="System Bold" size="15.0" />
-            </font>
-        </Label>
+        <Label fx:id="nome" alignment="CENTER" layoutX="406.0" layoutY="258.0" prefHeight="21.0" prefWidth="231.0" styleClass="lb" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="406.0" AnchorPane.topAnchor="258.0" />
+        <Label fx:id="sobrenomet" alignment="CENTER" layoutX="406.0" layoutY="291.0" prefHeight="21.0" prefWidth="231.0" styleClass="lb" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="177.0" AnchorPane.leftAnchor="406.0" AnchorPane.topAnchor="291.0" />
         <Label layoutX="289.0" layoutY="393.0" styleClass="lb" text="Última Atualização:" />
+        <Label fx:id="data2" layoutX="420.0" layoutY="393.0" prefHeight="16.0" prefWidth="169.0" styleClass="lb" text="Insira novos dados" textAlignment="CENTER" />
         <DatePicker fx:id="datap" disable="true" editable="false" layoutX="472.0" layoutY="389.0" prefHeight="25.0" prefWidth="197.0" styleClass="datapiker" visible="false" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="44.0" />
         <MenuBar blendMode="DARKEN" layoutX="10.0" layoutY="1.0" prefHeight="25.0" prefWidth="633.0" styleClass="menubar" AnchorPane.topAnchor="10.0">
             <menus>
                 <Menu mnemonicParsing="true" text="Usuário">
                     <items>
                         <MenuItem mnemonicParsing="true" onAction="#Editar_Usuario" text="Editar Perfil..." />
-                        <MenuItem mnemonicParsing="true" onAction="#Cadastrar_Usuario" text="Cadastrar Novo Usuário..." />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="true" text="Gastos">
+                <Menu mnemonicParsing="true" text="Dicas">
                     <items>
-                        <MenuItem mnemonicParsing="true" onAction="#Dicas_Consumo" text="Dicas de Consumo..." />
-                        <MenuItem mnemonicParsing="true" text="Grafico de Gastos..." /> 
+                        <MenuItem mnemonicParsing="true" onAction="#Dicas_Consumo" text="Dicas de Consumo..." /> 
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="true" text="Ajuda">
                     <items>
-                        <MenuItem mnemonicParsing="true" text="Sobre..." />
-                        <MenuItem mnemonicParsing="true" text="Contato..." /> 
+                        <MenuItem mnemonicParsing="true" text="Sobre..." /> 
                     </items>
                 </Menu>
             </menus>
@@ -63,7 +53,6 @@
         <Button fx:id="atualiza" layoutX="41.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" styleClass="bt" text="Inserir Dados" AnchorPane.topAnchor="232.0" />
         <Button fx:id="hist" contentDisplay="CENTER" layoutX="41.0" layoutY="286.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" styleClass="bt" text="Histórico de Gastos" AnchorPane.topAnchor="286.0" />
         <Button fx:id="ec" layoutX="41.0" layoutY="335.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" styleClass="bt" text="Economia" AnchorPane.topAnchor="335.0" />
-        <Button fx:id="sair" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="50.0" styleClass="bts" text="Sair" />
-      <Label fx:id="data2" layoutX="420.0" layoutY="393.0" prefHeight="16.0" prefWidth="169.0" styleClass="lb" text="Insira novos dados" textAlignment="CENTER" />
+        <Button fx:id="sair" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" styleClass="bts" text="Logout" />
     </children>  
 </AnchorPane>
