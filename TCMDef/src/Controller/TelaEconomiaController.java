@@ -6,14 +6,11 @@
 package Controller;
 
 import Main.MEconomia;
-import Main.MPrincipal;
 import Model.Usuario;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.stage.Stage;
 
 public class TelaEconomiaController implements Initializable {
 
