@@ -51,9 +51,6 @@ public class TelaPrincipalController implements Initializable {
         log = aLog;
     }
 
-    /**
-     * Initializes the controller class.
-     */
     @FXML
     private Button hist;
     @FXML
@@ -85,7 +82,7 @@ public class TelaPrincipalController implements Initializable {
             MediasDao dao = new MediasDao();
             ObservableList<Medias> medias = dao.getLista(log);
             for (int i = 0; i < medias.size(); i++) {
-                if (i+1 == medias.size()) {
+                if (i + 1 == medias.size()) {
                     //datap.setValue(medias.get(i).getData());
                     data2.setText(String.valueOf(medias.get(i).getData()));
                 }
@@ -129,8 +126,8 @@ public class TelaPrincipalController implements Initializable {
     }
 
     public void historico() {
+        MHistorico tela = new MHistorico(log);
         try {
-            MHistorico tela = new MHistorico(log);
             tela.start(new Stage());
         } catch (Exception ee) {
             ee.printStackTrace();

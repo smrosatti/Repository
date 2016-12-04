@@ -122,39 +122,47 @@ public class TelaAtualizarController implements Initializable {
         try {
 
             if (num1.getText().trim().isEmpty() | num2.getText().trim().isEmpty() | dataleitura.toString().trim().isEmpty()) {
-
                 Alert a = new Alert(Alert.AlertType.WARNING);
                 a.setHeaderText("Por favor preencha todos os campos!");
                 a.show();
 
             } else {
-
                 Medias m = new Medias();
                 m.setRegistro1(Integer.valueOf(num1.getText()));
                 m.setRegistro2(Integer.valueOf(num2.getText()));
                 m.setData(dataleitura.getValue());
                 m.setId_usuario(logado.getId_user());
-                m.consumo_de_agua();
+                if (m.getRegistro1() == m.getRegistro2()) {
+                    Alert al = new Alert(Alert.AlertType.ERROR);
+                    al.setHeaderText("Numeros adicionados com valores iguais, favor revisar os campos!");
+                    al.showAndWait();
+                } else if (m.getRegistro1() > m.getRegistro2()) {
+                    Alert ae = new Alert(Alert.AlertType.ERROR);
+                    ae.setHeaderText("Primeiro numero digitado é maior que o segundo, imporssivel calcular!");
+                    ae.showAndWait();
+                } else {
+                    m.consumo_de_agua();
 
-                m.getRegisFinal();
+                    m.getRegisFinal();
 
-                MediasDao dao = new MediasDao();
-                dao.insereMedia(m);
+                    MediasDao dao = new MediasDao();
+                    dao.insereMedia(m);
 
-                Float val = (float) (m.getGasto());
-                String valStr = String.format("%06.2f%n", val);
+                    Float val = (float) (m.getGasto());
+                    String valStr = String.format("%06.2f%n", val);
 
-                reaisf.setText(valStr);
-                litrosf.setText(Double.toString(m.getRegisFinal()));
+                    reaisf.setText(valStr);
+                    litrosf.setText(Double.toString(m.getRegisFinal()));
 
-                MPrincipal tela = new MPrincipal(logado);
-                tela.start(new Stage());
+                    MPrincipal tela = new MPrincipal(logado);
+                    tela.start(new Stage());
 
-                Alert a = new Alert(Alert.AlertType.INFORMATION);
-                a.setHeaderText("Média Cadastrada com Sucesso!");
-                a.show();
-                
-                MAtualizar.getStage().close();
+                    Alert a = new Alert(Alert.AlertType.INFORMATION);
+                    a.setHeaderText("Média Cadastrada com Sucesso!");
+                    a.show();
+
+                    MAtualizar.getStage().close();
+                }
             }
         } catch (Exception ee) {
             ee.printStackTrace();
