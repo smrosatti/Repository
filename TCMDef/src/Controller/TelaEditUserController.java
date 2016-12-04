@@ -7,6 +7,7 @@ package Controller;
 
 import Dao.UsuarioDao;
 import Main.MEditUser;
+import Main.MPrincipal;
 import Model.Criptografia;
 import Model.Usuario;
 import java.io.File;
@@ -23,7 +24,6 @@ import javafx.scene.effect.BlendMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Border;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -88,11 +88,11 @@ public class TelaEditUserController implements Initializable {
 
     public void Update() {
         try {
-            if (nomealtf.getText().trim().isEmpty() || sobrenomealtf.getText().trim().isEmpty() || emailaltf.getText().trim().isEmpty() || senhaaltf.getText().trim().isEmpty() || consenhaaltf.getText().trim().isEmpty() || caminho.trim().isEmpty()|| useraltf.getText().trim().isEmpty()) {
+            if (nomealtf.getText().trim().isEmpty() || sobrenomealtf.getText().trim().isEmpty() || emailaltf.getText().trim().isEmpty() || senhaaltf.getText().trim().isEmpty() || consenhaaltf.getText().trim().isEmpty() || caminho.trim().isEmpty() || useraltf.getText().trim().isEmpty()) {
                 Alert erro = new Alert(AlertType.ERROR);
                 erro.setHeaderText("Por Favor Preencha Todos os Campos Corretamente!");
                 erro.showAndWait();
-                
+
             } else if (senhaaltf.getText().equals(consenhaaltf.getText())) {
 
                 Usuario u = new Usuario();
@@ -106,21 +106,21 @@ public class TelaEditUserController implements Initializable {
 
                 UsuarioDao dao = new UsuarioDao();
                 dao.Update(u);
-                
+
                 Alert erro = new Alert(AlertType.CONFIRMATION);
                 erro.setHeaderText("Alterações feitas com sucesso!");
-                erro.show();
+                erro.showAndWait();
 
                 close();
 
             } else {
-                    senhaaltf.setBlendMode(BlendMode.RED);
-                    senhaaltf.setBlendMode(BlendMode.RED);
-                    Alert erro = new Alert(AlertType.ERROR);
-                    erro.setHeaderText("Senhas não coincidem!!");
-                    erro.showAndWait();
-                }
-            
+                senhaaltf.setBlendMode(BlendMode.RED);
+                senhaaltf.setBlendMode(BlendMode.RED);
+                Alert erro = new Alert(AlertType.ERROR);
+                erro.setHeaderText("Senhas não coincidem!!");
+                erro.showAndWait();
+            }
+
         } catch (Exception ee) {
             ee.printStackTrace();
         }
@@ -147,6 +147,8 @@ public class TelaEditUserController implements Initializable {
 
     public void close() {
         try {
+            MPrincipal mp = new MPrincipal(user);
+            mp.start(new Stage());
             MEditUser.getStage().close();
         } catch (Exception ee) {
             ee.printStackTrace();
