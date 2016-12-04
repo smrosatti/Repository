@@ -6,7 +6,6 @@
 package Model;
 
 import java.time.LocalDate;
-import javafx.scene.control.Alert;
 
 /**
  *
@@ -34,18 +33,22 @@ public class Medias {
         metrocubico = (1000);
 
         diferenca = registro2 - registro1;
-        
-        while (diferenca != 10){
-            diferenca = diferenca - 1;
-            d++;
+
+        if (diferenca < 10) {
+            d = diferenca;
+        } else {
+            while (diferenca != 10) {
+                diferenca = diferenca - 1;
+                d++;
+            }
         }
 
         registro1 = registro1 * metrocubico;
         registro2 = registro2 * metrocubico;
 
-        regisFinal = registro1 + registro2;
+        regisFinal = registro2 - registro1;
 
-        if (registro1 <= 10000 && regisFinal <= 10000) {
+        if (d <= 10 && regisFinal <= 10000) {
             gasto = (33.74);
         } else {
             while (cont < d) {

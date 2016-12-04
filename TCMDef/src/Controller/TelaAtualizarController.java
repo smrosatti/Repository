@@ -154,12 +154,12 @@ public class TelaAtualizarController implements Initializable {
                     reaisf.setText(valStr);
                     litrosf.setText(Double.toString(m.getRegisFinal()));
 
-                    MPrincipal tela = new MPrincipal(logado);
-                    tela.start(new Stage());
-
                     Alert a = new Alert(Alert.AlertType.INFORMATION);
                     a.setHeaderText("Média Cadastrada com Sucesso!");
-                    a.show();
+                    a.showAndWait();
+
+                    MPrincipal tela = new MPrincipal(logado);
+                    tela.start(new Stage());
 
                     MAtualizar.getStage().close();
                 }
