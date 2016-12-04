@@ -79,6 +79,8 @@ public class TelaEditUserController implements Initializable {
     public String caminho;
 
     private static Usuario user;
+    
+    private Usuario alterado;
 
     public void clear() {
         nomealtf.clear();
@@ -106,6 +108,9 @@ public class TelaEditUserController implements Initializable {
 
                 UsuarioDao dao = new UsuarioDao();
                 dao.Update(u);
+                
+                alterado = u;
+                setUser(alterado);
 
                 Alert erro = new Alert(AlertType.CONFIRMATION);
                 erro.setHeaderText("Alterações feitas com sucesso!");
@@ -115,7 +120,7 @@ public class TelaEditUserController implements Initializable {
 
             } else {
                 senhaaltf.setBlendMode(BlendMode.RED);
-                senhaaltf.setBlendMode(BlendMode.RED);
+                consenhaaltf.setBlendMode(BlendMode.RED);
                 Alert erro = new Alert(AlertType.ERROR);
                 erro.setHeaderText("Senhas não coincidem!!");
                 erro.showAndWait();
@@ -185,6 +190,14 @@ public class TelaEditUserController implements Initializable {
         cancel.setOnMouseClicked((MouseEvent evt) -> {
             close();
         });
+    }
+
+    public Usuario getAlterado() {
+        return alterado;
+    }
+
+    public void setAlterado(Usuario alterado) {
+        this.alterado = alterado;
     }
 
 }

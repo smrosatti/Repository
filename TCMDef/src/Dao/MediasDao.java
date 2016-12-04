@@ -102,7 +102,7 @@ public class MediasDao {
     }
 
     public void delete(Medias u) {
-        String sql = "DELETE * FROM medias WHERE id_media = ?";
+        String sql = "DELETE FROM medias WHERE id_media = ?";
         try {
             PreparedStatement stm = conexaobd.prepareStatement(sql);
             stm.setInt(1, u.getId_media());
