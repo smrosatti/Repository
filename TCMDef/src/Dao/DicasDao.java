@@ -5,10 +5,15 @@
  */
 package Dao;
 
+import java.sql.Connection;
+
 /**
  *
  * @author SARA
  */
 public class DicasDao {
+    
+    private Connection conexao;
+    
     
 }

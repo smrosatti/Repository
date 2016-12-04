@@ -8,6 +8,7 @@ package Controller;
 import Dao.MediasDao;
 import Main.MAtualizar;
 import Main.MHistorico;
+import Main.MPrincipal;
 import Model.Medias;
 import Model.Usuario;
 import com.itextpdf.text.Document;
@@ -213,8 +214,9 @@ public class TelaHistoricoController implements Initializable {
 
     public void adicionar() {
         try {
-            MAtualizar tela = new MAtualizar(getLogado());
+            MAtualizar tela = new MAtualizar(logado);
             tela.start(new Stage());
+            MHistorico.getStage().close();
         } catch (Exception ee) {
             ee.printStackTrace();
         }
@@ -267,6 +269,9 @@ public class TelaHistoricoController implements Initializable {
     public void sair() {
         try {
             MHistorico.getStage().close();
+            MPrincipal tela = new MPrincipal(logado);
+            tela.start(new Stage());
+            
         } catch (Exception ee) {
             ee.printStackTrace();
         }

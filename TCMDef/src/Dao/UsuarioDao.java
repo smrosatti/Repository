@@ -99,7 +99,7 @@ public class UsuarioDao {
     }
     
     public void delete(Usuario u){
-        String sql = "DELETE * FROM usuario WHERE id_user = ?";
+        String sql = "DELETE FROM usuario WHERE id_user = ?";
         try{
             PreparedStatement stm = conexaobd.prepareStatement(sql);
             stm.setInt(1, u.getId_user());
