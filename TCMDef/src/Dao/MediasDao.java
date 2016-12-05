@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.DecimalFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -87,6 +88,9 @@ public class MediasDao {
                 m.setData(ota.toLocalDate());
                 m.setRegisFinal(rs.getDouble("mediaagua"));
                 m.setGasto(rs.getDouble("mediagastos"));
+                
+                m.setGasto(Math.ceil(m.getGasto()));
+                
                 m.setRegistro1(rs.getInt("numerosiniciais"));
                 m.setRegistro2(rs.getInt("numerosfinais"));
 
