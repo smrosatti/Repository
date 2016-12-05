@@ -5,10 +5,11 @@
  */
 package Main;
 
-import Controller.TelaDicasController;
-import Model.Usuario;
+import Controller.AlterarDicasController;
+import Model.Dicas;
 import java.io.IOException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,34 +19,34 @@ import javafx.stage.Stage;
  *
  * @author SARA
  */
-public class MDicas extends Application {
+public class MAlterarDicas extends Application {
     
-    private static Stage stage;
+ private static Stage stage;
     
     public static Stage getStage(){
-        return MDicas.stage;
+        return MAlterarDicas.stage;
     }
     
-    public static void setStage(Stage st){
-        MDicas.stage = st;
+    public void setStage(Stage st){
+        MAlterarDicas.stage = st;
     }
     
-    public MDicas(Usuario u){
-        TelaDicasController.setLogado(u);
+    public MAlterarDicas(Dicas d){
+        AlterarDicasController.setDicaselecionada(d);
     }
     
     @Override
-    public void start(Stage primaryStage) throws IOException{
+    public void start(Stage primaryStage) throws IOException {
         
-        Parent root = FXMLLoader.load(getClass().getResource("/View/TelaDica.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/AlterarDicas.fxml"));
         
         Scene scene = new Scene(root);
         
-        primaryStage.setTitle("Dicas de Consumo");
+        primaryStage.setTitle("Alterar Dicas");
         primaryStage.setScene(scene);
         primaryStage.show();
         
-        stage = primaryStage;
+        MAlterarDicas.stage = primaryStage;
     }
 
     /**
@@ -54,5 +55,4 @@ public class MDicas extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
 }

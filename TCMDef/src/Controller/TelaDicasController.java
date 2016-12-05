@@ -5,15 +5,28 @@
  */
 package Controller;
 
+import static Controller.TelaHistoricoController.getLogado;
+import Dao.DicasDao;
+import Dao.MediasDao;
+import Main.MAlterarDicas;
+import Main.MCadastrarDicas;
+import Main.MDicas;
 import Model.Dicas;
 import Model.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,8 +42,8 @@ public class TelaDicasController implements Initializable {
     public static void setLogado(Usuario aLogado) {
         logado = aLogado;
     }
-    
-   /* @FXML
+
+    /* @FXML
     private ListView listv1;
     
     public void list() {
@@ -61,7 +74,6 @@ public class TelaDicasController implements Initializable {
     void voltar(){
         MDicas.getStage().close();
     }*/
-    
     @FXML
     private Button btalterar;
 
@@ -73,6 +85,9 @@ public class TelaDicasController implements Initializable {
 
     @FXML
     private Button btcadastrar;
+    
+    @FXML
+    private Button btatualizartable;
 
     @FXML
     private TableColumn<Integer, Dicas> idc;
@@ -83,19 +98,119 @@ public class TelaDicasController implements Initializable {
     @FXML
     private Button btdeletar;
 
-    @FXML
-    private TableColumn<String, Usuario> usuarioc;
-    
     private static Usuario logado;
-    
+
     private Dicas selecionado;
-    
+
+    private ObservableList OBListDicas;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }
 
-    public void inicializartable(){
+        inicializartable();
+
+        tabledicas.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                selecionado = (Dicas) newValue;
+            }
+        });
         
+        btalterar.setOnMouseClicked((MouseEvent evt)->{
+            alterar();
+        });
+        
+        btdeletar.setOnMouseClicked((MouseEvent evt)->{
+            deletar();
+        });
+        
+        btsair.setOnMouseClicked((MouseEvent evt)->{
+            sair();
+        });
+        
+        btcadastrar.setOnMouseClicked((MouseEvent evt)->{
+            cadastrar();
+        });
+        
+        btatualizartable.setOnMouseClicked((MouseEvent evt)->{
+            atualizar();
+        });
     }
     
+    public void atualizar(){
+        try{
+            DicasDao dao = new DicasDao();
+            OBListDicas= dao.getLista(getLogado());
+            tabledicas.setItems(OBListDicas);
+            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+            a.setHeaderText("Tabela Atualizada!");
+            a.showAndWait();          
+        }catch(Exception ee){
+            ee.printStackTrace();
+        }
+    }
+
+    public void inicializartable() {
+        try {
+            descricaoc.setCellValueFactory(new PropertyValueFactory("texto"));
+            idc.setCellValueFactory(new PropertyValueFactory("id_dica"));
+
+            DicasDao dao = new DicasDao();
+            OBListDicas = dao.getLista(getLogado());
+            tabledicas.setItems(OBListDicas);
+
+        } catch (Exception ee) {
+            ee.printStackTrace();
+        }
+    }
+
+    public void alterar() {
+        try {
+
+            if (selecionado != null) {
+                MAlterarDicas tela = new MAlterarDicas(selecionado);
+                tela.start(new Stage());
+            } else {
+                Alert al = new Alert(Alert.AlertType.INFORMATION);
+                al.setHeaderText("Selecione uma dica!");
+                al.show();
+            }
+        } catch (Exception ee) {
+            ee.printStackTrace();
+        }
+    }
+
+    public void cadastrar() {
+        try{
+            MCadastrarDicas tela = new MCadastrarDicas(logado);
+            tela.start(new Stage());
+        }catch(Exception ee){
+            ee.printStackTrace();
+        }
+
+    }
+    
+    public void deletar(){
+        try{
+         if (selecionado != null) {
+                DicasDao dao = new DicasDao();
+                dao.delete(selecionado);
+            } else {
+                Alert al = new Alert(Alert.AlertType.INFORMATION);
+                al.setHeaderText("Selecione uma dica!");
+                al.show();
+            }
+        }catch(Exception ee){
+            ee.printStackTrace();
+        }
+    }
+    
+    public void sair(){
+        try{
+            MDicas.getStage().close();
+        }catch(Exception ee){
+            ee.printStackTrace();
+        }
+    }
+
 }

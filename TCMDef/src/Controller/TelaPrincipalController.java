@@ -11,7 +11,6 @@ import Main.MDicas;
 import Main.MEconomia;
 import Main.MEditUser;
 import Main.MHistorico;
-import Main.MListarUsers;
 import Main.MLogin;
 import Main.MPrincipal;
 import Model.Medias;
@@ -99,15 +98,6 @@ public class TelaPrincipalController implements Initializable {
         }
     }
 
-    public void Listar_Usuario() {
-        try {
-            MListarUsers user = new MListarUsers();
-            user.start(new Stage());
-        } catch (Exception ee) {
-            ee.printStackTrace();
-        }
-    }
-
     public void historico() {
         MHistorico tela = new MHistorico(log);
         try {
@@ -171,7 +161,7 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     void Dicas_Consumo() {
         try {
-            MDicas dicas = new MDicas();
+            MDicas dicas = new MDicas(log);
             dicas.start(new Stage());
         } catch (Exception ee) {
             ee.printStackTrace();

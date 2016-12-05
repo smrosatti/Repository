@@ -10,18 +10,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="527.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaEconomiaController">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="546.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaEconomiaController">
     <stylesheets>
         <URL value="@../CSS/TelaEconomia.css" />
     </stylesheets>
     <children>
-        <ImageView fx:id="imagev1" fitHeight="628.0" fitWidth="807.0" layoutX="-2.0" pickOnBounds="true">
+        <ImageView fx:id="imagev1" fitHeight="546.0" fitWidth="721.0" layoutX="-2.0" pickOnBounds="true">
             <image>
                 <Image url="@../Imagem/TemaFundo.jpg" />
             </image>
         </ImageView>
-        <Label layoutX="326.0" layoutY="572.0" styleClass="lb" stylesheets="@../CSS/TelaEconomia.css" text="Médias mais frequentes" />
-        <Button fx:id="btvoltar" layoutX="42.0" layoutY="592.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Voltar" AnchorPane.leftAnchor="42.0" />
-      <PieChart fx:id="grafico" layoutX="90.0" layoutY="42.0" prefHeight="526.0" prefWidth="711.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="91.0" AnchorPane.topAnchor="42.0" />
+        <Label layoutX="270.0" layoutY="423.0" styleClass="lb" stylesheets="@../CSS/TelaEconomia.css" text="Médias mais frequentes" />
+        <Button fx:id="btvoltar" layoutX="60.0" layoutY="469.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Voltar" AnchorPane.leftAnchor="60.0" />
+      <PieChart fx:id="grafico" layoutX="90.0" layoutY="42.0" prefHeight="338.0" prefWidth="541.0" AnchorPane.bottomAnchor="166.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="42.0" />
     </children>
 </AnchorPane>

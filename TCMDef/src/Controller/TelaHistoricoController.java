@@ -155,7 +155,7 @@ public class TelaHistoricoController implements Initializable {
                     doc.add(new Paragraph("Data da Leitura: " + medias.get(x).getData()));
                     doc.add(new Paragraph("Dados Iniciais: " + medias.get(x).getRegistro1()));
                     doc.add(new Paragraph("Dados Finais: " + medias.get(x).getRegistro2()));
-                    doc.add(new Paragraph("Média em Litros: " + medias.get(x).getMetrocubico()));
+                    doc.add(new Paragraph("Média em Litros: " + medias.get(x).getRegisFinal()));
                     doc.add(new Paragraph("Média em Reais: " + medias.get(x).getGasto()));
                     doc.add(new Paragraph("\n"));
                 }
