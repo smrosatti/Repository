@@ -10,30 +10,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="532.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaEconomiaController">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="527.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaEconomiaController">
     <stylesheets>
         <URL value="@../CSS/TelaEconomia.css" />
     </stylesheets>
     <children>
-        <ImageView fx:id="imagev1" fitHeight="532.0" fitWidth="653.0" layoutX="-2.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <ImageView fx:id="imagev1" fitHeight="628.0" fitWidth="807.0" layoutX="-2.0" pickOnBounds="true">
             <image>
                 <Image url="@../Imagem/TemaFundo.jpg" />
             </image>
         </ImageView>
-        <Label fx:id="lb1" layoutX="49.0" layoutY="60.0" styleClass="lb" stylesheets="@../CSS/TelaEconomia.css" text="Data Ínicio:" />
-        <Label fx:id="lb2" layoutX="53.0" layoutY="116.0" styleClass="lb" stylesheets="@../CSS/TelaEconomia.css" text="Data Final:" AnchorPane.rightAnchor="510.0" />
-        <Label fx:id="lb3" layoutX="236.0" layoutY="412.0" styleClass="lb" stylesheets="@../CSS/TelaEconomia.css" text="Consumo de água atual" />
-        <DatePicker fx:id="dat1" layoutX="144.0" layoutY="57.0" prefHeight="25.0" prefWidth="223.0" styleClass="datapiker" stylesheets="@../CSS/TelaEconomia.css" />
-        <DatePicker fx:id="dat2" layoutX="144.0" layoutY="113.0" prefHeight="25.0" prefWidth="223.0" styleClass="datapiker" stylesheets="@../CSS/TelaEconomia.css" />
-        <Button fx:id="bt1" layoutX="442.0" layoutY="77.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="171.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Atualizar Gráfico" />
-        <Button fx:id="bt3" layoutX="38.0" layoutY="475.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="61.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Voltar" AnchorPane.leftAnchor="38.0" />
-        <LineChart fx:id="linec" layoutX="39.0" layoutY="165.0" prefHeight="234.0" prefWidth="575.0">
-            <xAxis>
-                <CategoryAxis fx:id="categ" side="BOTTOM" />
-            </xAxis>
-            <yAxis>
-                <NumberAxis fx:id="number" side="LEFT" />
-            </yAxis>
-        </LineChart>
+        <Label layoutX="326.0" layoutY="572.0" styleClass="lb" stylesheets="@../CSS/TelaEconomia.css" text="Médias mais frequentes" />
+        <Button fx:id="btvoltar" layoutX="42.0" layoutY="592.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" styleClass="bt" stylesheets="@../CSS/TelaEconomia.css" text="Voltar" AnchorPane.leftAnchor="42.0" />
+      <PieChart fx:id="grafico" layoutX="90.0" layoutY="42.0" prefHeight="526.0" prefWidth="711.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="91.0" AnchorPane.topAnchor="42.0" />
     </children>
 </AnchorPane>

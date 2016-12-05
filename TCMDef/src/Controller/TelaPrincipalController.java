@@ -108,25 +108,6 @@ public class TelaPrincipalController implements Initializable {
         }
     }
 
-    public void imagem() {
-        try {
-            FileChooser janela = new FileChooser();
-            janela.getExtensionFilters().add(new ExtensionFilter("Imagens", "*.jpg", "*.png", "*.jpeg"));
-            File f = janela.showOpenDialog(new Stage());
-
-            if (f != null) {
-                caminho = ("file:///" + f.getAbsolutePath());
-                foto.setImage(new Image(caminho));
-                //mudancas();
-            } else {
-                Alert erro = new Alert(AlertType.WARNING);
-                erro.setHeaderText("Nenhuma imagem selecionada!");
-            }
-        } catch (Exception ee) {
-            ee.printStackTrace();
-        }
-    }
-
     public void historico() {
         MHistorico tela = new MHistorico(log);
         try {
@@ -149,7 +130,7 @@ public class TelaPrincipalController implements Initializable {
 
     public void economia() {
         try {
-            MEconomia tela = new MEconomia();
+            MEconomia tela = new MEconomia(log);
             tela.start(new Stage());
         } catch (Exception ee) {
             ee.printStackTrace();
@@ -196,9 +177,9 @@ public class TelaPrincipalController implements Initializable {
             ee.printStackTrace();
         }
     }
-    
+
     @FXML
-    void tutorial(){
+    void tutorial() {
         TelaTutorialController tela = new TelaTutorialController();
         try {
             tela.start(new Stage());
@@ -228,9 +209,5 @@ public class TelaPrincipalController implements Initializable {
             sair();
         });
 
-        foto.setOnMouseClicked((MouseEvent evt) -> {
-            imagem();
-        });
     }
-
 }

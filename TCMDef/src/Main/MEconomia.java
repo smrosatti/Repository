@@ -30,6 +30,10 @@ public class MEconomia extends Application {
         MEconomia.stage = st;
     }
     
+    public MEconomia(Usuario u){
+        TelaEconomiaController.setLogado(u);
+    }
+    
     @Override
     public void start(Stage primaryStage) throws IOException {
         

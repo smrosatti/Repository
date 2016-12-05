@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AlterarDicasController">
+    <stylesheets>
+        <URL value="@../CSS/AtualizarDados.css" />
+    </stylesheets>
+    <children>
+        <ImageView fitHeight="505.0" fitWidth="635.0" layoutY="-3.0" pickOnBounds="true">
+            <image>
+                <Image url="@../Imagem/TemaFundo.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="imguser" fitHeight="150.0" fitWidth="150.0" layoutX="26.0" layoutY="126.0" pickOnBounds="true" />
+        <Label layoutX="223.0" layoutY="20.0" styleClass="lb" text="Cadastrar Dica" AnchorPane.leftAnchor="243.0" AnchorPane.rightAnchor="243.0" />
+        <Label layoutX="225.0" layoutY="126.0" styleClass="lb" text="Dica: " AnchorPane.rightAnchor="374.0" AnchorPane.topAnchor="126.0" />
+        <Label fx:id="nomeuser" alignment="CENTER" layoutX="26.0" layoutY="282.0" prefHeight="21.0" prefWidth="150.0" styleClass="lb" text="Nome Usuário" textAlignment="CENTER" />
+        <Button fx:id="btsalvar" layoutX="535.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" styleClass="bt" text="Salvar" AnchorPane.topAnchor="346.0" />
+        <Button fx:id="btlimpar" layoutX="292.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" styleClass="bt" text="Limpar" AnchorPane.topAnchor="346.0" />
+        <Button fx:id="btvoltar" layoutX="36.0" layoutY="450.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="65.0" styleClass="bt" text="Voltar" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+      <TextArea fx:id="textodica" layoutX="292.0" layoutY="119.0" prefHeight="191.0" prefWidth="308.0" wrapText="true" />
+    </children>   
+</AnchorPane>

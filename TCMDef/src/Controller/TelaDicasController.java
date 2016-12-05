@@ -5,14 +5,15 @@
  */
 package Controller;
 
-import Main.MDicas;
+import Model.Dicas;
+import Model.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -20,8 +21,16 @@ import javafx.scene.control.ListView;
  * @author SARA
  */
 public class TelaDicasController implements Initializable {
+
+    public static Usuario getLogado() {
+        return logado;
+    }
+
+    public static void setLogado(Usuario aLogado) {
+        logado = aLogado;
+    }
     
-    @FXML
+   /* @FXML
     private ListView listv1;
     
     public void list() {
@@ -51,11 +60,42 @@ public class TelaDicasController implements Initializable {
     @FXML
     void voltar(){
         MDicas.getStage().close();
-    }
+    }*/
+    
+    @FXML
+    private Button btalterar;
+
+    @FXML
+    private TableView<Dicas> tabledicas;
+
+    @FXML
+    private TableColumn<String, Dicas> descricaoc;
+
+    @FXML
+    private Button btcadastrar;
+
+    @FXML
+    private TableColumn<Integer, Dicas> idc;
+
+    @FXML
+    private Button btsair;
+
+    @FXML
+    private Button btdeletar;
+
+    @FXML
+    private TableColumn<String, Usuario> usuarioc;
+    
+    private static Usuario logado;
+    
+    private Dicas selecionado;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        list();
-    }    
+    }
+
+    public void inicializartable(){
+        
+    }
     
 }

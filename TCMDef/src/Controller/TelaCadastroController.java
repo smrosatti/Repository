@@ -61,7 +61,7 @@ public class TelaCadastroController implements Initializable {
     @FXML
     private ImageView imagemuser;
 
-    String CaminhoImagem;
+    String CaminhoImagem = "/Imagem/user.png";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -150,9 +150,7 @@ public class TelaCadastroController implements Initializable {
     }
 
     public void Cancela() {
-        MInicial tela = new MInicial();
         try {
-            tela.start(new Stage());
             MCadastro.getStage().close();
         } catch (Exception ee) {
             ee.printStackTrace();

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaDicasController">
+    <stylesheets>
+        <URL value="@../CSS/TelaHistorico.css" />
+    </stylesheets>
+    <children>
+          <SplitPane dividerPositions="0.27" prefHeight="534.0" prefWidth="831.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="158.0">
+                      <children>
+                          <ImageView fitHeight="561.0" fitWidth="221.0" layoutY="-3.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                              <image>
+                                  <Image url="@../Imagem/FundoHist.jpg" />
+                              </image>
+                          </ImageView>
+                          <Label layoutX="76.0" layoutY="49.0" prefHeight="29.0" prefWidth="70.0" styleClass="lb" text="Dicas" textAlignment="CENTER" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="73.0" />
+                          <Button fx:id="btdeletar" layoutX="60.0" layoutY="310.0" mnemonicParsing="false" prefWidth="100.0" styleClass="bt" text="Deletar Dica" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="310.0" />
+                          <Button fx:id="btalterar" layoutX="60.0" layoutY="242.0" mnemonicParsing="false" prefWidth="100.0" styleClass="bt" text="Alterar Dica" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="242.0" />
+                          <Button fx:id="btsair" layoutX="14.0" layoutY="507.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" styleClass="bt" text="Sair" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="507.0" />
+                  <Button fx:id="btcadastrar" layoutX="61.0" layoutY="175.0" mnemonicParsing="false" prefWidth="100.0" styleClass="bt" text="Cadastrar Dica" />
+                      </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="496.0">
+                      <children>
+                          <TableView fx:id="tabledicas" layoutX="-4.0" prefHeight="532.0" prefWidth="518.0" styleClass="table" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <columns>
+                                  <TableColumn fx:id="idc" prefWidth="69.0" styleClass="table1" text="ID" />
+                                  <TableColumn fx:id="descricaoc" prefWidth="399.0" styleClass="table1" text="Descrição" />
+                                  <TableColumn fx:id="usuarioc" prefWidth="131.0" styleClass="table1" text="Usuário" />
+                              </columns>
+                          </TableView>
+                      </children>
+                  </AnchorPane>
+              </items>
+          </SplitPane>
+    </children>
+</AnchorPane>
